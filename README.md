@@ -11,6 +11,7 @@ Just copy one or more of the language files to your tasklist app and include the
 
 | Language    | File                          | Contributor                                          |
 | ------------|-------------------------------|------------------------------------------------------|
+| German      | [de.json](/locales/de.json)   | [camunda services GmbH](https://github.com/camunda)  |
 | English     | [en.json](/locales/en.json)   | [camunda services GmbH](https://github.com/camunda)  |
 | Russian     | [ru.json](/locales/ru.json)   | [Andrii Stesin](https://github.com/astesin)|
 | Ukrainian   | [uk.json](/locales/uk.json)   | [Andrii Stesin](https://github.com/astesin)|
