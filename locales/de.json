@@ -280,10 +280,10 @@
       "Sonntag",
       "Montag",
       "Dienstag",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
+      "Mittwoche",
+      "Donnerstag",
+      "Freitag",
+      "Samstag"
     ],
     "weekdaysShort": [
       "Son",
@@ -291,15 +291,15 @@
       "Die",
       "Mit",
       "Don",
-      "Fri",
+      "Fre",
       "Sam"
     ],
     "weekdaysMin": [
-      "Su",
+      "So",
       "Mo",
-      "Tu",
-      "We",
-      "Th",
+      "Di",
+      "Mi",
+      "Do",
       "Fr",
       "Sa"
     ],
