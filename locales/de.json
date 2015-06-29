@@ -233,7 +233,7 @@
     "RESET_PAGE": "Seitenzahl zurücksetzen",
     "TASK_LIST_LOADING_FAILURE": "Laden der Aufgabenliste fehlgeschlagen. Versuchen Sie die Seite zu aktualisieren um es erneut zu versuchen.",
     "PROCESS_VARIABLE": "Prozessvariable",
-    "TASK_VARIABLE": Aufgabenvariable",
+    "TASK_VARIABLE": "Aufgabenvariable",
     "CASE_VARIABLE": "Casevariable",
     "LOGGED_IN": "Sie sind jetzt angemeldet.",
     "CREDENTIALS_ERROR": "Anmeldung mit diesen Benutzerdaten nicht möglich.",
