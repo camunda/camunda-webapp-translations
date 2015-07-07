@@ -17,6 +17,7 @@ Just copy one or more of the language files to your tasklist app and include the
 | Ukrainian   | [uk.json](/locales/uk.json)   | [Andrii Stesin](https://github.com/astesin)|
 | Polish      | [pl.json](/locales/pl.json)   | [camunda services GmbH](https://github.com/camunda)  |
 | Dutch       | [nl.json](/locales/nl.json)   | [camunda services GmbH](https://github.com/camunda)  |
+| Spanish     | [es.json](/locales/es.json)   | [Paolo Vásquez](https://github.com/paolovas)  |
 
 ### Contribute!
 
