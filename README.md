@@ -9,16 +9,16 @@ Just copy one or more of the language files to your tasklist app and include the
 
 ### List of available translations
 
-| Language             | File                             | Contributor                                              |
-| ---------------------|----------------------------------|----------------------------------------------------------|
-| German               | [de.json](/locales/de.json)      | [camunda services GmbH](https://github.com/camunda)      |
-| English              | [en.json](/locales/en.json)      | [camunda services GmbH](https://github.com/camunda)      |
-| Russian              | [ru.json](/locales/ru.json)      | [Andrii Stesin](https://github.com/astesin)              |
-| Ukrainian            | [uk.json](/locales/uk.json)      | [Andrii Stesin](https://github.com/astesin)              |
-| Polish               | [pl.json](/locales/pl.json)      | [camunda services GmbH](https://github.com/camunda)      |
-| Dutch                | [nl.json](/locales/nl.json)      | [camunda services GmbH](https://github.com/camunda)      |
-| Spanish              | [es.json](/locales/es.json)      | [Paolo Vásquez](https://github.com/paolovas)             |
-| Portuguese(Brazilian)| [pt_BR.json](/locales/pt_BR.json)| [Marcio(Ambiente Livre)](http://www.ambientelivre.com.br)|
+| Language             | File                             | Contributor                                                            |
+| ---------------------|----------------------------------|------------------------------------------------------------------------|
+| German               | [de.json](/locales/de.json)      | [camunda services GmbH](https://github.com/camunda)                    |
+| English              | [en.json](/locales/en.json)      | [camunda services GmbH](https://github.com/camunda)                    |
+| Russian              | [ru.json](/locales/ru.json)      | [Andrii Stesin](https://github.com/astesin)                            |
+| Ukrainian            | [uk.json](/locales/uk.json)      | [Andrii Stesin](https://github.com/astesin)                            |
+| Polish               | [pl.json](/locales/pl.json)      | [camunda services GmbH](https://github.com/camunda)                    |
+| Dutch                | [nl.json](/locales/nl.json)      | [camunda services GmbH](https://github.com/camunda)                    |
+| Spanish              | [es.json](/locales/es.json)      | [Paolo Vásquez](https://github.com/paolovas)                           |
+| Portuguese(Brazilian)| [pt_BR.json](/locales/pt_BR.json)| [Marcio Junior Vieira(Ambiente Livre)](http://www.ambientelivre.com.br)|
 
 
 ### Contribute!
