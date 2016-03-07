@@ -1,4 +1,4 @@
-# camunda tasklist translations
+# Camunda Tasklist Translations
 
 
 This community extension for camunda BPM provides translations for the [camunda tasklist](https://github.com/camunda/camunda-tasklist-ui).
