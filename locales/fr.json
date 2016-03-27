@@ -249,7 +249,7 @@
     "NO_MATCHING_TASK": "Aucune tâche trouvée selon les filtres.",
     "RESTRICTION_NOTICE": "Les paramètres de recherche actuels ne retournent aucune tâches. Essayez de réinitialiser les critères de recherche.",
     "RESET_PAGE": "Réinitialiser le numéro de page",
-    "TASK_LIST_LOADING_FAILURE": "Echec du chargement de la liste des tâches. Veuillez rafraichir la page pour essayer à nouveau.,
+    "TASK_LIST_LOADING_FAILURE": "Echec du chargement de la liste des tâches. Veuillez rafraichir la page pour essayer à nouveau.",
     "PROCESS_VARIABLE": "Variable de process",
     "TASK_VARIABLE": "Variable de tâche",
     "CASE_VARIABLE": "Variable de cas",
@@ -344,7 +344,7 @@
       "Lun",
       "Mar",
       "Mer",
-      "Jeu",Sunday
+      "Jeu",
       "Ven",
       "Sam"
     ],
