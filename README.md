@@ -23,7 +23,7 @@ Just copy one or more of the language files to your tasklist app and include the
 
 ### Contribute!
 
-Everybode is welcome to contribute! You can help by sending us a pull request with your translation of the tasklist.
+Everybody is welcome to contribute! You can help by sending us a pull request with your translation of the tasklist.
 
   * Website: http://www.camunda.org/
   * Contribution Guidelines: http://www.camunda.org/community/contribute.html
