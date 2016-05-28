@@ -19,6 +19,7 @@ Just copy one or more of the language files to your tasklist app and include the
 | Dutch                | [nl.json](/locales/nl.json)      | [camunda services GmbH](https://github.com/camunda)                    |
 | Spanish              | [es.json](/locales/es.json)      | [Paolo Vásquez](https://github.com/paolovas)                           |
 | Portuguese(Brazilian)| [pt_BR.json](/locales/pt_BR.json)| [Marcio Junior Vieira(Ambiente Livre)](http://www.ambientelivre.com.br)|
+| Japanese             | [ja.json](/locales/ja.json)      | [Masaaki Inaba](https://github.com/mas178) ([Rational Works, Inc.](http://rational.works))|
 
 
 ### Contribute!
