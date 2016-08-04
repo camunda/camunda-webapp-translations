@@ -97,7 +97,7 @@
     "INVALID_DATE": "Date invalide, le format de date doit être le suivant 'yyyy-MM-ddTHH:mm:ss'",
     "REQUIRE_UNIQUE_KEY": "La clé doit être unique",
     "FORM_FAILURE": "Erreurs de formulaire:",
-    "INIT_EXTERNAL_FORM_FAILED": "Ne peut initialiser l'url du formulaire externe: l'id de tâche ou la clé de définition de process doit être fournie. Veuillez rafraichir la page pour essayer à nouveau.",
+    "INIT_EXTERNAL_FORM_FAILED": "Ne peut initialiser l'url du formulaire externe: l'ID de tâche ou la clé de définition de process doit être fournie. Veuillez rafraichir la page pour essayer à nouveau.",
     "TASK_EXTERNAL_FORM_NOTE": "Cette tâche contient un formulaire externe pour être completée. Pour ouvrir le formulaire externe cliquez sur le lien \"Ouvrir formulaire externe\" ci-dessous.",
     "PROCESS_EXTERNAL_FORM_NOTE": "Ce process contient un formulaire externe pour démarrer une nouvelle instance de process. Pour ouvrir le formulaire externe cliquez sur le lien \"Ouvrir formulaire externe\" ci-dessous.",
     "USE_GENERIC_FORM": "Vous pouvez affecter des variables, à l'aide d'un formulaire générique, en cliquant le lien \"Ajouter une variable\" ci-dessous.",
