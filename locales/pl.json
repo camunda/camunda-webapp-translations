@@ -308,7 +308,8 @@
     "TOGGLE": "Przełącz",
     "SERIALIZED": "Serializowane",
     "DESERIALIZED": "Deserializowane",
-    "DESERIALIZATION_ERROR": "Błąd podczas deserializacji"
+    "DESERIALIZATION_ERROR": "Błąd podczas deserializacji",
+    "Comment": "Komentarz"
   },
   "dateLocales": {
     "months": [
