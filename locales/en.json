@@ -15,6 +15,7 @@
     "DELETE": "Delete",
     "SET": "Set",
     "CHANGE": "Change",
+    "DISMISS": "Dismiss",
     "TASK": "Task",
     "FILTER": "Filter",
     "TASKS": "Tasks",
