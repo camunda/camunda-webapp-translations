@@ -1,11 +1,14 @@
 # Camunda Tasklist Translations
 
 
-This community extension for camunda BPM provides translations for the [camunda tasklist](https://github.com/camunda/camunda-tasklist-ui).
+This community extension for camunda BPM provides translations for the [camunda tasklist](https://github.com/camunda/camunda-bpm-webapp).
 
 ### Get Started
 
 Just copy one or more of the language files to your tasklist app and include them in the config file as described in the [User Guide](http://docs.camunda.org/latest/guides/user-guide/#tasklist-customizing-localization).
+
+A [Video Tutorial](https://blog.camunda.org/post/2014/12/internationalization-in-camunda-bpm/
+) is also available.
 
 ### List of available translations
 
@@ -20,6 +23,7 @@ Just copy one or more of the language files to your tasklist app and include the
 | Spanish              | 7.5.0   | [es.json](/locales/es.json)      | [Paolo Vásquez](https://github.com/paolovas)                           |
 | Portuguese(Brazilian)| 7.5.0   | [pt_BR.json](/locales/pt_BR.json)| [Marcio Junior Vieira(Ambiente Livre)](http://www.ambientelivre.com.br)|
 | Japanese             | 7.5.0   | [ja.json](/locales/ja.json)      | [Masaaki Inaba](https://github.com/mas178) ([Rational Works, Inc.](http://rational.works))|
+| Danish               | 7.6.0   | [da.json](/locales/da.json)      | [Lasse Lindgård](https://github.com/lldata)                            |
 
 
 ### Contribute!
