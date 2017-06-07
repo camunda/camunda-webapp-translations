@@ -15,7 +15,7 @@ A [Video Tutorial](https://blog.camunda.org/post/2014/12/internationalization-in
 | Language             | Version | File                             | Contributor                                                            |
 |----------------------|---------|----------------------------------|------------------------------------------------------------------------|
 | German               | 7.5.0   | [de.json](/locales/de.json)      | [camunda services GmbH](https://github.com/camunda)                    |
-| English              | 7.6.0   | [en.json](/locales/en.json)      | [camunda services GmbH](https://github.com/camunda)                    |
+| English              | 7.7.0   | [en.json](/locales/en.json)      | [camunda services GmbH](https://github.com/camunda)                    |
 | Russian              | 7.6.0   | [ru.json](/locales/ru.json)      | [Andrii Stesin](https://github.com/astesin), [Max Davliatshin](https://github.com/TitanUser)                        |
 | Ukrainian            | 7.5.0   | [uk.json](/locales/uk.json)      | [Andrii Stesin](https://github.com/astesin)                            |
 | Polish               | 7.5.0   | [pl.json](/locales/pl.json)      | [camunda services GmbH](https://github.com/camunda)                    |
