@@ -117,7 +117,7 @@
     "FILTERS_LOADING_FAILURE": "Il caricamento dei filtri è terminato con errori. Prova a ricaricare la pagina.",
     "INVALID_DATE": "Data non valida: la data deve rispettare il formato: 'yyyy-MM-ddTHH:mm:ss'",
     "REQUIRE_UNIQUE_KEY": "La chiave deve essere univoca",
-    "FORM_FAILURE": "Errore form:',
+    "FORM_FAILURE": "Errore form:",
     "INIT_EXTERNAL_FORM_FAILED": "Impossibile inizializzare l'URL del form esterno: il task ID o la chiave della definizione del processo devono essere indicati. Per riprovare, ricarica la pagina.",
     "TASK_EXTERNAL_FORM_NOTE": "Questo task fa uso di un form esterno per essere completato. Per aprire il form esterno clicca sul \"Apri form esterno\" quì sotto.",
     "PROCESS_EXTERNAL_FORM_NOTE": "Questo processo fa uso di un form esterno per iniziare una nuova istanza. Per aprire il form esterno clicca sul \"Apri form esterno\" quì sotto.",
