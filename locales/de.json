@@ -45,7 +45,7 @@
     "FAILED_TO_DISPLAY_RESOURCE": "Fehler beim Anzeigen der Resource",
     "AUTHENTICATION_FAILED": "Authentifizierung fehlgeschlagen. Die Session ist abgelaufen, bitte erneut Anmelden.",
     "LOGIN_ERROR_MSG": "Falsche Zugangsdaten oder fehlende Zugriffsberechtigungen für die Anwendung",
-    "LOGGED_IN": "Anmeldung erfolgreichs.",
+    "LOGGED_IN": "Anmeldung erfolgreich.",
     "Username": "Benutzername",
     "Password": "Passwort",
     "PLEASE_SIGN_IN": "Bitte anmelden",
