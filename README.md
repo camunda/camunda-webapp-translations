@@ -5,7 +5,7 @@ This community extension for Camunda BPM provides translations for Camunda Taskl
 
 ### Get Started
 
-Just copy one or more of the language files to one of the webapp and include them in the config file as described in the [User Guide](http://docs.camunda.org/latest/guides/user-guide/#tasklist-customizing-localization).
+Just copy one or more of the language files to one of the webapp and include them in the config file as described in the [User Guide](https://docs.camunda.org/manual/latest/webapps/tasklist/configuration/#localization).
 
 A [Video Tutorial](https://blog.camunda.org/post/2014/12/internationalization-in-camunda-bpm/
 ) is also available.
