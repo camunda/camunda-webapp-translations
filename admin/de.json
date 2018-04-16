@@ -346,7 +346,7 @@
     "USERS_TENANT_ID": "Mandanten-ID",
     "USERS_TENANT_NAME": "Mandanten-Name",
     "USERS_USER": "Benutzer",
-    "USERS_NOT_MEMBER_TENTANT": "Benutzer {{firstname}} {{lastname}} besitzt aktuell keine Tenant-Mitgliedschaft.",
+    "USERS_NOT_MEMBER_TENTANT": "Benutzer {{firstname}} {{lastname}} besitzt aktuell keine Mandanten-Mitgliedschaft.",
     "USERS_NOT_MEMBER_GROUP": "Benutzer {{firstname}} {{lastname}} besitzt aktuell keine Gruppen-Mitgliedschaft.",
     "USERS_USER_ACCOUNT": "Benutzer-Konto",
     "USERS_USER_ID": "Benutzer-ID*",
