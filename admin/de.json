@@ -2,7 +2,7 @@
   "labels": {
     "APP_VENDOR": "Camunda",
     "ADMIN_APP": "Admin",
-    "TASKLIST_APP": "Taskliste",
+    "TASKLIST_APP": "Tasklist",
     "COCKPIT_APP": "Cockpit",
     "TOGGLE_NAVIGATION": "Navigation umschalten",
     "SUBMIT": "Bestätigen",
