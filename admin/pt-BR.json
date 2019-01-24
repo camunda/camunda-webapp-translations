@@ -434,6 +434,23 @@
     "PLUGIN_SEARCH_USER_LIKE": "como",
     "PLUGIN_SEARCH_USER_EMAIL": "Email",
     "PLUGIN_SEARCH_USER_TENANT_ID": "ID do Tenant",
-    "PLUGIN_SEARCH_USER_GROUP_ID": "ID do Grupo"
+    "PLUGIN_SEARCH_USER_GROUP_ID": "ID do Grupo",
+	"ADMIN_LICENSE_NOTIFICATION_STATUS_SUCCESS": "Successo",
+    "ADMIN_LICENSE_NOTIFICATION_STATUS_FAILED": "Falhou",
+    "ADMIN_LICENSE_TAB_KEY_STORED": "Chave de licença armazenada com sucesso.",
+    "ADMIN_LICENSE_TAB_KEY_INVALID": "Chave de licença inválida fornecida. Não será armazenada.",
+    "ADMIN_LICENSE_TAB_KEY_FAILED": "Falha ao armazenar chave de licença.",
+    "ADMIN_LICENSE_KEY": "Chave de Licença",
+    "ADMIN_LICENSE_KEY_VALID": "Sua chave de licença é válida.",
+    "ADMIN_LICENSE_CUSTOMER_ID": "ID do Cliente:",
+    "ADMIN_LICENSE_VALID_UNTIL": "Válido até:",
+    "ADMIN_LICENSE_UNLIMITED_VALIDITY": "Sua chave de licença tem validade ilimitada. Ela não irá expirar.",
+    "ADMIN_LICENSE_INVALID_KEY": "Chave de licença inválida fornecida:",
+    "ADMIN_LICENSE_NO_KEY": "Nenhuma Chave de Licença foi fornecida.",
+    "ADMIN_LICENSE_ANOTHER_KEY": "Digite outra Chave de Licença",
+    "ADMIN_LICENSE_YOUR_KEY": "Insira sua Chave de Licença:",
+    "ADMIN_LICENSE_PASTE_KEY": "Cole sua chave de licença aqui…",
+    "ADMIN_LICENSE_SAVE_KEY": "Salvar Chave",
+    "ADMIN_LICENSE_NOT_HAVE": "Não tem uma chave de licença?"
   }
 }
