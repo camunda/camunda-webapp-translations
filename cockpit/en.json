@@ -2069,6 +2069,16 @@
     "PLGN_MIG_RUNNING_ACTIVITY_INSTANCES": "Running activity instances",
     "PLGN_MIG_CREATE_MAPPING": "Create mapping",
     "PLGN_MIG_REMOVE_MAPPING": "Remove mapping",
-    "PLGN_MIG_NOT_MAPPED": "This activity is not mapped!"
+    "PLGN_MIG_NOT_MAPPED": "This activity is not mapped!",
+    "PLUGIN_DIAGRAM_ACTIVITY_STATISTICS": "Activity Instance Statistics:",
+    "PLUGIN_DIAGRAM_ACTIVITY_STATISTICS_TOOLTIP": "Toggle Activity Instance Statistics",
+    "PLUGIN_DIAGRAM_ACTIVITY_STATISTICS_ON": "on",
+    "PLUGIN_DIAGRAM_ACTIVITY_STATISTICS_OFF": "off",
+    "PLUGIN_DIAGRAM_ACTIVITY_STATISTICS_LOADING": "loading...",
+    "PLUGIN_DIAGRAM_HEATMAP": "Heatmap:",
+    "PLUGIN_DIAGRAM_HEATMAP_TOOLTIP": "Toggle Heatmap",
+    "PLUGIN_DIAGRAM_HEATMAP_ON": "on",
+    "PLUGIN_DIAGRAM_HEATMAP_OFF": "off",
+    "PLUGIN_DIAGRAM_HEATMAP_LOADING": "loading..."
   }
 }
