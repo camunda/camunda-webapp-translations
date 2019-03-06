@@ -1101,6 +1101,7 @@
     "PLGN_CLUP_DECISION": "decision",
     "PLGN_CLUP_PROCESS": "process",
     "PLGN_CLUP_TOGGLE": "Toggle this section",
+    "PLGN_CLUP_SUSPENDED": "Cleanup is suspended.",
     "PLGN_MTRCS_EVALUATED": "Evaluated ",
     "PLGN_MTRCS_LAST": "Last {{ metricsPeriod }}: {{ previous }}",
     "PLGN_MTRCS_SELECT_RANGE": "Select a range in the chart",
