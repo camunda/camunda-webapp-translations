@@ -1937,6 +1937,8 @@
     "PLGN_HIST_SEARCH_VARIABLE_VALUE": "Variable Value",
     "PLGN_HIST_VARIABLES": "Variables",
     "PLGN_HIST_SHOW_VARIABLE_LOG": "Show Variable Log",
+    "PLGN_HIST_NOTIFICATION": "Notification",
+    "PLGN_HIST_CANT_LOAD_SCOPE": "Could not load scope for variables. There are too many activity instances.",
     "PLGN_HIST_DELETE": "Delete",
     "PLGN_HIST_DELETE_VARIABLE": "Delete Variable",
     "PLGN_HIST_DELETE_VARIABLE_ERROR_MSG": "Could not delete the Variable {{ name }}",
