@@ -957,7 +957,7 @@
     "PLGN_AUDIT_SEARCH_CONFIG_TOOLTIPS_OPERATOR": "Operator",
     "PLGN_AUDIT_SEARCH_CONFIG_TOOLTIPS_VALUE": "Value",
     "PLGN_AUDIT_SEARCH_CONFIG_PROCESS_DEFINITION_ID": "Process Definition ID",
-    "PLUGIN_AUDIT_NO_RESULTS": "No more results",
+    "PLGN_AUDIT_NO_COLUMNS": "No Columns added",
     "PLGN_BATCH_TITLE": "Batch operation",
     "PLGN_BATCH_LABEL": "Batch Operation",
     "PLGN_BATCH_FIRST_STEP": "1. Define Operation",
