@@ -922,7 +922,7 @@
     "PLGN_ADJ_ENTER_EDIT": "Enter Edit Mode",
     "PLGN_ADJ_DELETE_DECISION_INSTANCES": "Delete decision instances",
     "PLGN_AUDIT_LOG_LABEL": "Operation Log" ,
-    "PLGN_AUDIT_ID": "ID" ,
+    "PLGN_AUDIT_ID": "Operation ID",
     "PLGN_AUDIT_ENTITY": "Entity",
     "PLGN_AUDIT_PROCESS": "Process Definition",
     "PLGN_AUDIT_PROCESS_INSTANCE": "Process Instance ID",
