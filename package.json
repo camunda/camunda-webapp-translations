@@ -1,6 +1,6 @@
 {
   "name": "camunda-webapp-translations",
-  "version": "0.0.1",
+  "version": "7.11.0-alpha3",
   "description": "",
   "main": "index.js",
   "scripts": {
