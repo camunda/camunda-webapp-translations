@@ -151,6 +151,13 @@
     "TASKLIST": "Tasklist",
     "ADMIN": "Admin",
     "DOCUMENTATION": "Documentation",
-    "DOCUMENTATION_DESCRIPTION": "Camunda webapps user documentation"
+    "DOCUMENTATION_DESCRIPTION": "Camunda webapps user documentation",
+    "PASSWORD_POLICY_TOOLTIP": "Your Password should have at least:",
+    "PASSWORD_POLICY_TOOLTIP_PARTIAL": "Your Password is missing some criteria:",
+    "PASSWORD_POLICY_LENGTH": "{{minLength}} characters",
+    "PASSWORD_POLICY_LOWERCASE": "{{minLowerCase}} lowercase characters",
+    "PASSWORD_POLICY_UPPERCASE": "{{minUpperCase}} uppercase characters",
+    "PASSWORD_POLICY_DIGIT": "{{minDigit}} digits",
+    "PASSWORD_POLICY_SPECIAL": "{{minSpecial}} special characters"
   }
 }
