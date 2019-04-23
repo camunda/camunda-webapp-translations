@@ -93,6 +93,9 @@
     "CAM_WIDGET_SEARCH_MATCH_TYPE_ANY": "Einige",
     "CAM_WIDGET_SEARCH_MATCH_TYPE_ALL": "Alle",
     "CAM_WIDGET_SEARCH_TOTAL_NUMBER_RESULTS": "Anzahl der Ergebnisse",
+    "CAM_WIDGET_SEARCH_VARIABLE_CASE_VALUE": "Werten",
+    "CAM_WIDGET_SEARCH_VARIABLE_CASE_NAME": "Namen",
+    "CAM_WIDGET_SEARCH_VARIABLE_CASE_ATTRIBUTE": "Ignorier die Groß- und Kleinschreibung für Variablen- ",
     "CAM_WIDGET_VARIABLES_TABLE_TOOLTIP_SET_NULL": "Setze Wert auf \"null\"",
     "CAM_WIDGET_VARIABLES_TABLE_PLACEHOLDER_VALUE": "Wert der Variable",
     "CAM_WIDGET_VARIABLES_TABLE_TOOLTIP_DEFAULT_VALUE": "Zurücksetzen auf vorherigen Wert oder Standardwert",
@@ -105,6 +108,9 @@
     "CAM_WIDGET_VARIABLES_TABLE_NAME": "Name",
     "CAM_WIDGET_VARIABLES_TABLE_TYPE": "Typ",
     "CAM_WIDGET_VARIABLES_TABLE_VALUE": "Wert",
+    "CAM_WIDGET_VARIABLES_TABLE_DELETE": "Löschen",
+    "CAM_WIDGET_VARIABLES_TABLE_ABORT": "Abbrechen",
+    "CAM_WIDGET_VARIABLES_TABLE_DIALOGUE": "Wollen Sie '{{name}}' wirklich löschen?",
     "CAM_WIDGET_VARIABLE_DIALOG_INSPECT": "Variable {{ name }} prüfen",
     "CAM_WIDGET_VARIABLE_DIALOG_LABEL_OBJECT_TYPE": "Name des Objekt-Typs:",
     "CAM_WIDGET_VARIABLE_DIALOG_LABEL_SERIALIZATION": "Daten-Format der Serialisierung:",
@@ -145,6 +151,13 @@
     "TASKLIST": "Aufgabenliste",
     "ADMIN": "Administration",
     "DOCUMENTATION": "Dokumentation",
-    "DOCUMENTATION_DESCRIPTION": "Camunda Webapps Benutzerdokumentation"
+    "DOCUMENTATION_DESCRIPTION": "Camunda Webapps Benutzerdokumentation",
+    "PASSWORD_POLICY_TOOLTIP": "Das Password sollte mindestens folgende Kriterien erfüllen:",
+    "PASSWORD_POLICY_TOOLTIP_PARTIAL": "Das Passwort erfüllt nicht alle Kriterien:",
+    "PASSWORD_POLICY_LENGTH": "{{minLength}} Zeichen lang",
+    "PASSWORD_POLICY_LOWERCASE": "{{minLowerCase}} Kleinbuchstaben",
+    "PASSWORD_POLICY_UPPERCASE": "{{minUpperCase}} Großbuchstaben",
+    "PASSWORD_POLICY_DIGIT": "{{minDigit}} Ziffern",
+    "PASSWORD_POLICY_SPECIAL": "{{minSpecial}} Sonderzeichen"
   }
 }
