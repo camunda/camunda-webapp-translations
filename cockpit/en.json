@@ -1245,6 +1245,7 @@
     "PLGN_MOD_SEARCH_VARIABLE": "Variable",
     "PLGN_MOD_SEARCH_ACTIVE": "Active",
     "PLGN_MOD_SEARCH_SUSPENDED": "Suspended",
+    "PLGN_MOD_SEARCH_WITH_INCIDENTS": "With Incidents",
     "PLGN_MOD_SEARCH_INCIDENT_ID": "Incident ID",
     "PLGN_MOD_SEARCH_INCIDENT_TYPE": "Incident Type",
     "PLGN_MOD_SEARCH_INCIDENT_MESSAGE": "Incident Message",
