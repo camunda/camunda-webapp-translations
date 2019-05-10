@@ -1049,7 +1049,7 @@
     "PLGN_BTCH_SET_REMOVAL_TIME_ABSOLUTE": "Removal Time",
     "PLGN_BTCH_SET_REMOVAL_TIME_ABSOLUTE_PLACEHOLDER": "YYYY-MM-DDTHH:mm:ss",
     "PLGN_BTCH_SET_REMOVAL_TIME_ABSOLUTE_REQUIRED": "A removal time is required!",
-    "PLGN_BTCH_SET_REMOVAL_TIME_ABSOLUTE_MSG": "The removal time date format is wrong!",
+    "PLGN_BTCH_SET_REMOVAL_TIME_ABSOLUTE_MSG": "Supported pattern 'yyyy-MM-ddTHH:mm:ss'",
     "PLGN_BTCH_SET_REMOVAL_TIME_HIERARCHICAL": "Hierarchical",
     "PLGN_BTCH_SET_REMOVAL_TIME_HIERARCHICAL_TOOLTIP": "Sets the removal time across all instances in the hierarchy",
     "PLGN_BTCH_SET_REMOVAL_TIME_SENTENCE": " set the removal to ",
