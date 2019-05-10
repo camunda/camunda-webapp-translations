@@ -511,6 +511,7 @@
     "PLGN_SEAR_ADD_COLUMN": "Spalte hinzufügen",
     "PASSWORD_POLICY_TOOLTIP": "Das Password sollte mindestens folgende Kriterien erfüllen:",
     "PASSWORD_POLICY_TOOLTIP_PARTIAL": "Das Passwort erfüllt nicht alle Kriterien:",
+    "PASSWORD_POLICY_TOOLTIP_ERROR": "Bei der Validierung ist ein Fehler aufgetreten.",
     "PASSWORD_POLICY_LENGTH": "{{minLength}} Zeichen Lang",
     "PASSWORD_POLICY_LOWERCASE": "{{minLowerCase}} Kleinbuchstaben",
     "PASSWORD_POLICY_UPPERCASE": "{{minUpperCase}} Großbuchstaben",
