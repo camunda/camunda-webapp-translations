@@ -2186,7 +2186,11 @@
     "PLUGIN_DIAGRAM_HEATMAP_TOOLTIP": "Toggle Heatmap",
     "PLUGIN_DIAGRAM_HEATMAP_ON": "on",
     "PLUGIN_DIAGRAM_HEATMAP_OFF": "off",
-    "PLUGIN_DIAGRAM_HEATMAP_LOADING": "loading..."
+    "PLUGIN_DIAGRAM_HEATMAP_LOADING": "loading...",
+    "PLUGIN_INSPECT_LABEL": "Documentation",
+    "PLUGIN_INSPECT_TAB_ELEMENT": "Element",
+    "PLUGIN_INSPECT_TAB_DOCU": "Documentation",
+    "PLUGIN_INSPECT_TAB_NO_DOCU": "No Documentation"
   },
   "dateLocales": {
     "months": [
