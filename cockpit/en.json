@@ -2190,7 +2190,9 @@
     "PLUGIN_INSPECT_LABEL": "Documentation",
     "PLUGIN_INSPECT_TAB_ELEMENT": "Element",
     "PLUGIN_INSPECT_TAB_DOCU": "Documentation",
-    "PLUGIN_INSPECT_TAB_NO_DOCU": "No Documentation"
+    "PLUGIN_INSPECT_TAB_NO_DOCU": "No Documentation",
+    "PLUGIN_DOCUMENTATION_MODAL_HEADER": "Documentation for {{name}}",
+    "PLUGIN_DOCUMENTATION_MODAL_COPY": "Copy Documentation"
   },
   "dateLocales": {
     "months": [
