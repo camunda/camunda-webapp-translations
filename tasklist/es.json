@@ -1,9 +1,9 @@
 {
   "labels": {
     "APP_VENDOR": "Camunda",
-    "ADMIN_APP": "Administrador",
-    "TASKLIST_APP": "Lista de tareas",
-    "COCKPIT_APP": "Supervisor de procesos",
+    "ADMIN_APP": "Admin",
+    "TASKLIST_APP": "Tasklist",
+    "COCKPIT_APP": "Cockpit",
     "TOGGLE_NAVIGATION": "Cambiar navegación",
     "SUBMIT": "Enviar",
     "SAVE": "Guardar",
