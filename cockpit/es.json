@@ -65,7 +65,7 @@
     "PAGES_MSG_ACCESS_DENIED": "No tiene permisos para {{missingAuths}}.",
     "PAGES_MSG_ACCESS_DENIED_RESOURCE_ID": "No está autorizado a {{permissionName}} {{resourceName}} {{resourceId}}.",
     "PAGES_MSG_ACTION_DENIED": "La ejecución de una acción ha sido denegada por el servidor. Intenta actualizar la página.",
-    "PAGES_STATUS_NOT_FOUND": "No encontrado,
+    "PAGES_STATUS_NOT_FOUND": "No encontrado",
     "PAGES_MSG_NOT_FOUND": "No se pudo encontrar un recurso que usted solicitó.",
     "PAGES_STATUS_COMMUNICATION_ERROR": "Error de Comunicación",
     "PAGES_MSG_COMMUNICATION_ERROR": "The application received an unexpected {{status}} response from the server. Try to refresh the page or login and out of the application.",
