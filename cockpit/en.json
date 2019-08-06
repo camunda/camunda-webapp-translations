@@ -1669,6 +1669,7 @@
     "PLGN_EXT_SUCCESSFUL": "Successful",
     "PLGN_EXT_DELETED": "Deleted",
     "PLGN_EXT_LOG": "External Tasks Log",
+    "PLGN_EXT_TIMESTAMP": "Timestamp",
     "PLGN_DPLY_DEPLOY": " Deploy",
     "PLGN_DPLY_DEPLOYMENT_SUCCESSFUL": "Deployment successful",
     "PLGN_DPLY_RESOURCE_UPDATED": "The resource was successfully updated. ",
