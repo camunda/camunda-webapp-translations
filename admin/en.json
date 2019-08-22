@@ -373,6 +373,8 @@
     "USERS_USER_PROFILE": "User Profile",
     "USERS_CREATE_NEW_USER": "Create new user",
     "USERS_CANCEL": "Cancel",
+    "USERS_NO_SORTING_HEADER": "Sorting Disabled",
+    "USERS_NO_SORTING_BODY": "Your identity provider does not support sorted results. Users are displayed in the default order.",
     "TENANTS_TENANTS": "Tenants",
     "TENANTS_LIST_TENANTS": "List of Tenants",
     "TENANTS_LIST_OF_TENANTS": "List of tenants",
