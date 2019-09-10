@@ -895,6 +895,8 @@
     "PLUGIN_JOBS_RESUME_TOOLTIP": "Resume",
     "PLUGIN_JOBS_SUSPEND_SUCCESS": "The suspension state of the job has been updated successfully.",
     "PLUGIN_JOBS_SUSPEND_FAILURE": "Could not update the suspension state of the job.",
+    "PLUGIN_JOBS_CASCADE": "Cascade",
+    "PLUGIN_JOBS_CASCADE_TOOLTIP": "Apply change to subsequent jobs.",
     "PLGN_ACTIVITY_INSTANCE_PERIOD_TIME_PERIOD": "Time Period:",
     "PLGN_ACTIVITY_INSTANCE_PERIOD_TODAY": "Today",
     "PLGN_ACTIVITY_INSTANCE_PERIOD_MONTH": "This month",
