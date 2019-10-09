@@ -1371,6 +1371,8 @@
     "PLGN_MOD_DIALOG_CONFIRM": "Confirm the modifications",
     "PLGN_MOD_DIALOG_ABOUT_TO_MODIFY_INSTANCES": "You are about to modify the instance in the following way:",
     "PLGN_MOD_DIALOG_OUT_OF": "({{ selectedInstancesCount }} out of {{ instancesCount }})",
+    "PLGN_MOD_DIALOG_ANNOTATION": "Annotation",
+    "PLGN_MOD_DIALOG_ANNOTATION_HELP": "Why would you do that?",
     "PLGN_MOD_OUT_OF": " out of ",
     "PLGN_PACT_DELETE_ALL": "Delete all versions of {{ key }}",
     "PLGN_PACT_MODAL_DELETE_ALL": "All versions of this process definition will be deleted.",
