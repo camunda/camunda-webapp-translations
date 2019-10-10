@@ -2183,6 +2183,7 @@
     "PLUGIN_DIAGRAM_HEATMAP_TOOLTIP": "Toggle Heatmap",
     "PLUGIN_DIAGRAM_HEATMAP_ON": "on",
     "PLUGIN_DIAGRAM_HEATMAP_OFF": "off",
-    "PLUGIN_DIAGRAM_HEATMAP_LOADING": "loading..."
+    "PLUGIN_DIAGRAM_HEATMAP_LOADING": "loading...",
+    "DEF_VIEW_CHANGE_VERSION_NOT_UNIQUE": "Selected version is not unique!"
   }
 }
