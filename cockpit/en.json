@@ -2207,7 +2207,8 @@
     "PLUGIN_INSPECT_TAB_DOCU": "Documentation",
     "PLUGIN_INSPECT_TAB_NO_DOCU": "No Documentation",
     "PLUGIN_DOCUMENTATION_MODAL_HEADER": "Documentation for {{name}}",
-    "PLUGIN_DOCUMENTATION_MODAL_COPY": "Copy Documentation"
+    "PLUGIN_DOCUMENTATION_MODAL_COPY": "Copy Documentation",
+    "DEF_VIEW_CHANGE_VERSION_NOT_UNIQUE": "Selected version is not unique!"
   },
   "dateLocales": {
     "months": [
