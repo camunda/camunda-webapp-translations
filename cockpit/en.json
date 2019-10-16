@@ -1478,6 +1478,8 @@
     "PLGN_SEAR_PI_INCIDENT_TYPE": "Process Instance : Incident Type",
     "PLGN_SEAR_PI_JOB_EXECUTION_DATE": "Process Instance : Job Execution Date",
     "PLGN_SEAR_PI_ACTIVITY_EXECUTION_DATE": "Process Instance : Activity Execution Date",
+    "PLGN_SEAR_PI_ACTIVE_ACTIVITY_ID": "Process Instance : Active Activity ID",
+    "PLGN_SEAR_PI_EXECUTED_ACTIVITY_ID": "Process Instance : Executed Activity ID",
     "PLGN_SEAR_INC_ID": "Incident : ID",
     "PLGN_SEAR_INC_TYPE": "Incident : Type",
     "PLGN_SEAR_INC_MESSAGE": "Incident : Message",
