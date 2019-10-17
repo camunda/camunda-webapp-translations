@@ -45,7 +45,7 @@
     "AUTH_DAY_CONTEXT_WEEKEND": "weekend",
     "AUTH_FAILED_TO_DISPLAY_RESOURCE": "Failed to display resource",
     "AUTH_AUTHENTICATION_FAILED": "Authentication failed. Your session might have expired, you need to login.",
-    "PAGE_LOGIN_ERROR_MSG": "Wrong credentials or missing access rights to application",
+    "PAGE_LOGIN_ERROR_MSG": "Wrong credentials, locked user or missing access rights to application",
     "PAGE_LOGIN_USERNAME": "Username",
     "PAGE_LOGIN_PASSWORD": "Password",
     "PAGE_LOGIN_PLEASE_SIGN_IN": "Please sign in",

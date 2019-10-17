@@ -45,7 +45,7 @@
     "AUTH_DAY_CONTEXT_WEEKEND": "Wochenausklang",
     "AUTH_FAILED_TO_DISPLAY_RESOURCE": "Fehler beim Anzeigen der Ressource",
     "AUTH_AUTHENTICATION_FAILED": "Authentifizierung fehlgeschlagen. Die Session ist abgelaufen, bitte erneut anmelden.",
-    "PAGE_LOGIN_ERROR_MSG": "Falsche Zugangsdaten oder fehlende Zugriffsberechtigungen für die Anwendung",
+"PAGE_LOGIN_ERROR_MSG": "Falsche Zugangsdaten, gesperrter Nutzer oder fehlende Zugriffsberechtigungen für die Anwendung"
     "PAGE_LOGIN_USERNAME": "Benutzername",
     "PAGE_LOGIN_PASSWORD": "Passwort",
     "PAGE_LOGIN_PLEASE_SIGN_IN": "Bitte anmelden",
