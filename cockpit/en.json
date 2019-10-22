@@ -1480,6 +1480,8 @@
     "PLGN_SEAR_PI_ACTIVITY_EXECUTION_DATE": "Process Instance : Activity Execution Date",
     "PLGN_SEAR_PI_ACTIVE_ACTIVITY_ID": "Process Instance : Active Activity ID",
     "PLGN_SEAR_PI_EXECUTED_ACTIVITY_ID": "Process Instance : Executed Activity ID",
+    "PLGN_SEAR_PI_TENANT_ID": "Process Instance : Tenant Id",
+    "PLGN_SEAR_PI_WITHOUT_TENANT_ID": "Process Instance : without Tenant Id",
     "PLGN_SEAR_INC_ID": "Incident : ID",
     "PLGN_SEAR_INC_TYPE": "Incident : Type",
     "PLGN_SEAR_INC_MESSAGE": "Incident : Message",
