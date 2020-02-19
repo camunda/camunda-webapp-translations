@@ -2087,6 +2087,7 @@
     "PLGN_HIST_COULD_NOT_DELETE": "The deletion of all historical variables failed.",
     "PLGN_HIST_DELETE_VARIABLES_FAILED": "Could not delete all historical variables. Make sure the process instance still exists.",
     "PLGN_HIST_HOSTNAME": "Hostname",
+    "PLGN_HIST_FAILING_ACTIVITY": "Failing Activity",
     "PLGN_REP_COMPLETED_HUMAN_TASK_REPORT": "Completed Human Task Report",
     "PLGN_REP_PROCESS_INSTANCE_DURATION": "Process Instance Duration",
     "PLGN_REP_BARS_CHART": "Bars chart",
