@@ -159,6 +159,8 @@
     "PASSWORD_POLICY_LOWERCASE": "{{minLowerCase}} Kleinbuchstaben",
     "PASSWORD_POLICY_UPPERCASE": "{{minUpperCase}} Großbuchstaben",
     "PASSWORD_POLICY_DIGIT": "{{minDigit}} Ziffern",
-    "PASSWORD_POLICY_SPECIAL": "{{minSpecial}} Sonderzeichen"
+    "PASSWORD_POLICY_SPECIAL": "{{minSpecial}} Sonderzeichen",
+    "FIRST_LOGIN_INFO": "Es scheint als verwenden Sie die Webapps zum ersten mal. Besuchen Sie die <a href=\"/camunda-welcome\">Camunda Welcome Seite</a> für einen schnellen Überblick.",
+    "FIRST_LOGIN_HEADING": "Wilkommen bei Camunda"
   }
 }
