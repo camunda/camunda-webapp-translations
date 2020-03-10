@@ -395,7 +395,9 @@
     "TOGGLE": "Alternar",
     "SERIALIZED": "Serializado",
     "DESERIALIZED": "Deserializado",
-    "DESERIALIZATION_ERROR": "Erro de deserialização"
+    "DESERIALIZATION_ERROR": "Erro de deserialização",
+    "FIRST_LOGIN_INFO": "Parece que esta é sua primeira vez usando os aplicativos da web. Confira a <a href=\"/camunda-welcome\"> Página de boas-vindas do Camunda </a> para uma rápida visão geral.",
+    "FIRST_LOGIN_HEADING": "Bem vindo ao Camunda"
   },
   "dateLocales": {
     "months": [
