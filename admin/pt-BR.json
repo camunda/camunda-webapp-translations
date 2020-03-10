@@ -175,6 +175,7 @@
     "GROUP_MEMBERSHIP_GROUP_GROUP_NAME": "Nome do Grupo",
     "GROUP_MEMBERSHIP_GROUP_GROUP_TYPE": "Tipo do Grupo",
     "GROUP_MEMBERSHIP_GROUP_MESSAGE_AVAILABLE_GROUPS": "Não há grupos adicionais disponíveis para os quais o usuário pode ser adicionado. Você pode criar um novo grupo",
+    "GROUP_MEMBERSHIP_GROUP_MESSAGE_AVAILABLE_GROUPS_PAGE": "Não há grupos adicionais disponíveis nesta página aos quais o usuário possa ser adicionado. Você pode verificar outras páginas para mais grupos.",
     "GROUP_MEMBERSHIP_GROUP_MESSAGE_HERE": "aqui",
     "GROUP_MEMBERSHIP_GROUP_MESSAGE_SUCCESS": "O usuário foi adicionado com sucesso aos grupos selecionados.",
     "GROUP_MEMBERSHIP_GROUP_CLOSE": "Fechar",
@@ -532,6 +533,8 @@
     "PASSWORD_POLICY_LOWERCASE": "{{minLowerCase}} letras minúsculas",
     "PASSWORD_POLICY_UPPERCASE": "{{minUpperCase}} letras maiúsculas",
     "PASSWORD_POLICY_DIGIT": "{{minDigit}} digitos",
-    "PASSWORD_POLICY_SPECIAL": "{{minSpecial}} caracteres especiais"
+    "PASSWORD_POLICY_SPECIAL": "{{minSpecial}} caracteres especiais",
+    "FIRST_LOGIN_INFO": "Parece que esta é sua primeira vez usando os aplicativos da web. Confira a <a href=\"/camunda-welcome\"> Página de boas-vindas do Camunda </a> para uma rápida visão geral.",
+    "FIRST_LOGIN_HEADING": "Bem vindo ao Camunda"
   }
 }
