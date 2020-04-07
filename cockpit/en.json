@@ -294,6 +294,7 @@
     "VARIABLE_ADD_VARIABLE_TYPE": "Variable Type*",
     "VARIABLE_ADD_VARIABLE_VALUE": "Variable Value*",
     "VARIABLE_ADD_VARIABLE_SUPPORTED": "Supported pattern 'yyyy-MM-ddTHH:mm:ss'.",
+    "VARIABLE_SELECT_DATE": "Select a Date",
     "VARIABLE_ADD_VARIABLE_ONLY": "Only a {{type}} value is allowed.",
     "VARIABLE_ADD_STATUS_SUCCESS_PROCESS": "The variable \"{{name}}\" has been added to the process instance successfully.",
     "VARIABLE_ADD_STATUS_SUCCESS_CASE": "The variable \"{{name}}\" has been added to the case instance successfully.",
@@ -929,7 +930,7 @@
     "PLGN_ADJ_PROCEED": "Proceed",
     "PLGN_ADJ_ENTER_EDIT": "Enter Edit Mode",
     "PLGN_ADJ_DELETE_DECISION_INSTANCES": "Delete decision instances",
-    "PLGN_AUDIT_LOG_LABEL": "Operation Log" ,
+    "PLGN_AUDIT_LOG_LABEL": "Operation Log",
     "PLGN_AUDIT_ID": "Operation ID",
     "PLGN_AUDIT_ENTITY": "Entity",
     "PLGN_AUDIT_PROCESS": "Process Definition",
@@ -2269,24 +2270,8 @@
       "Friday",
       "Saturday"
     ],
-    "weekdaysShort": [
-      "Sun",
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu",
-      "Fri",
-      "Sat"
-    ],
-    "weekdaysMin": [
-      "Su",
-      "Mo",
-      "Tu",
-      "We",
-      "Th",
-      "Fr",
-      "Sa"
-    ],
+    "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "weekdaysMin": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
     "longDateFormat": {
       "LT": "HH:mm",
       "L": "DD/MM/YYYY",
