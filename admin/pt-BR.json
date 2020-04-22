@@ -295,7 +295,7 @@
     "SETUP_USER_MESSAGE_2": "Você está tentando acessar o mecanismo de processo \"",
     "SETUP_USER_MESSAGE_3": "\". Esse mecanismo de processo é configurado para usar o serviço de identidade interno (banco de dados), mas não possui usuários administrativos configurados.",
     "SETUP_USER_MESSAGE_4": "Essa página permite que você crie um usuário para acessar o mecanismo de processo.",
-    "SETUP_USER_MESSAGE_5": "Â» Configurar LDAP em vez disso",
+    "SETUP_USER_MESSAGE_5": "» Configurar LDAP em vez disso",
     "SETUP_COULD_NOT_CREATE_USER": "Não foi possível criar um usuário inicial",
     "SYSTEM_SYSTEM_SETTINGS": "Configurações do Sistema",
     "SYSTEM_GENERAL_SETTINGS": "Configurações Gerais",
