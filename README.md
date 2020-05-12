@@ -1,7 +1,7 @@
 # Camunda Webapp Translations
 
 
-This community extension for Camunda BPM provides translations for Camunda Tasklist, Cockpit Basic/Full and Admin.
+This Camunda BPM project provides translations for Camunda Tasklist, Cockpit Basic/Full and Admin.
 
 ### Get Started
 
