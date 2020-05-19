@@ -1002,7 +1002,7 @@
     "PLGN_BATCH_DEFINITION_KEY": "Definitions-Schlüssel",
     "PLGN_BATCH_START_TIME": "Anfangszeitpunkt",
     "PLGN_BATCH_JOB_LOG_HEADER": "Job-Log",
-    "PLGN_BATCH_NO_JOB_LOGS": "Es gibt keine Logs für diesen Job. Stellen Sie sicher, dass das historie Level richtig gesetzt ist.",
+    "PLGN_BATCH_NO_JOB_LOGS": "Es gibt keine Logs für diesen Job. Stellen Sie sicher, dass das Historie Level richtig gesetzt ist.",
     "PLGN_BATCH_NO_JOB_ERROR": "Beim laden des Job-Logs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "PLGN_BTCH_INSTANCES_PROCESSED": "Instanzen werden verarbeitet... Bitte warten Sie einen Moment.",
     "PLGN_BTCH_OPERATION_EXECUTED": "Operation wird ausgeführt.\nEin neuer Stapel mit der ID {{id}} wurde angelegt.",
