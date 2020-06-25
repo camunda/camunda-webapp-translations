@@ -287,6 +287,7 @@
     "BATCHES_DELETE_JOB_FAILED": "Could not delete job: {{message}}",
     "BATCHES_RETRY_JOB_STATUS": "Finished",
     "BATCHES_RETRY_JOB_FAILED": "Could not retry job: {{message}}",
+    "BATCHES_LOAD_ENDED": "Load ended batches",
     "VARIABLE_ADD_MODAL_TITLE_PROCESS": "Add Variable to Process Instance",
     "VARIABLE_ADD_MODAL_TITLE_CASE": "Add Variable to Case Instance",
     "VARIABLE_ADD_VARIABLE_NAME": "Variable Name*",
