@@ -2261,7 +2261,7 @@
     "TELEMETRY_INTRODUCTION_IMPROVE": "Help Camunda improve the BPM engine",
     "TELEMETRY_DETAILS_HEADER": "What does Telemetry measure?",
     "TELEMETRY_DETAILS_META_DATA": "Meta data",
-    "TELEMETRY_DETAILS_META_DATA_WHAT": "Product version, database technology, application server and pseudonymized installation ID.",
+    "TELEMETRY_DETAILS_META_DATA_WHAT": "Product version, edition, database technology, JDK vendor and version, application server vendor and version, license key information if provided (customer name, expiry date, enabled features), and pseudonymized installation ID.",
     "TELEMETRY_DETAILS_META_DATA_WHY": "This helps us to better understand the environments where Camunda is running.",
     "TELEMETRY_PREFERENCES_HEADER": "Privacy Preferences",
     "TELEMETRY_PREFERENCES_DETAILS": "To enhance user experience, Camunda BPM Runtime engine can integrate with Camunda Services GmbH, which requires external network requests. Please choose from the setting below.",
