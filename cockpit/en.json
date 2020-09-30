@@ -299,6 +299,7 @@
     "VARIABLE_SELECT_DATE": "Select a Date",
     "VARIABLE_ADD_VARIABLE_ONLY": "Only a {{type}} value is allowed.",
     "VARIABLE_ADD_STATUS_SUCCESS_PROCESS": "The variable \"{{name}}\" has been added to the process instance successfully.",
+    "VARIABLE_ADD_STATUS_SUCCESS_BATCH": "The variable \"{{name}}\" has been added to the batch operation successfully.",
     "VARIABLE_ADD_STATUS_SUCCESS_CASE": "The variable \"{{name}}\" has been added to the case instance successfully.",
     "VARIABLE_ADD_STATUS_FAIL_PROCESS": "The variable \"{{name}}\" could not be added to the process instance.",
     "VARIABLE_ADD_STATUS_FAIL_CASE": "The variable \"{{name}}\" could not be added to the case instance.",
