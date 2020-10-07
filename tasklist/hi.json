@@ -69,15 +69,15 @@
     " PAGES_MSG_NOT_FOUND " : "  एक आपके द्वारा अनुरोधित संसाधन नहीं पाया जा सका " ,
     " PAGES_STATUS_COMMUNICATION_ERROR " : " संचार त्रुटि " ,
     " PAGES_MSG_COMMUNICATION_ERROR " : " इस अनुप्रयोग में अनपेक्षित {{स्थिति}} सर्वर से प्रतिक्रिया प्राप्त पेज या लॉगिन और आवेदन के बाहर ताज़ा करने के लिए प्रयास करें " ,
-    " PAGES_MSG_ENGINE_NOT_EXISTS " : " जिस प्रक्रिया इंजन को आप एक्सेस करने का प्रयास कर रहे हैं वह मौजूद नहीं है , " 
+    " PAGES_MSG_ENGINE_NOT_EXISTS " : " जिस प्रक्रिया इंजन को आप एक्सेस करने का प्रयास कर रहे हैं वह मौजूद नहीं है , " ।
     " SERVICES_RESOURCE_RESOLVER_ID_NOT_FOUND " : " कोई आईडी के साथ {{ResourceName}} {{id}} " ,
     " SERVICES_RESOURCE_RESOLVER_AUTH_FAILED " : " प्रमाणीकरण विफल आपका सत्र समाप्त हो हो सकता है, यदि आप प्रवेश करने की जरूरत है " ,
     " SERVICES_RESOURCE_RESOLVER_RECEIVED_STATUS " : " प्राप्त {{स्थिति}} सर्वर से " ,
-    " Services_RESOURCE_RESOLVER_DISPLAY_FAILED " : " {{resourceName}}  प्रदर्शित करने में विफल रहा , "
+    " Services_RESOURCE_RESOLVER_DISPLAY_FAILED " : " {{resourceName}} " प्रदर्शित करने में विफल रहा , "
     " SERVICES_RESOURCE_RESOLVER_NO_PROMISE " : " कोई #resolve द्वारा दिया वादा " ,
     " CAM_WIDGET_BPMN_VIEWER_ERROR " : " चित्र प्रस्तुत करना नहीं कर सका: " ,
     " CAM_WIDGET_BPMN_VIEWER_LOADING " : " लोड हो रहा है आरेख " ,
-    " CAM_WIDGET_COPY " : " {{value}}  कॉपी करने के लिए क्लिक करें " ,
+    " CAM_WIDGET_COPY " : " {{value}} " कॉपी करने के लिए क्लिक करें " ,
     " CAM_WIDGET_COPY_LINK " : " वर्तमान स्थान पर प्रतिलिपि लिंक करें " ,
     " CAM_WIDGET_CMMN_VIEWER_ERROR " : " चित्र प्रस्तुत करना नहीं कर सका: " ,
     " CAM_WIDGET_CMMN_VIEWER_LOADING " : " लोड हो रहा है आरेख " ,
@@ -111,7 +111,7 @@
     " CAM_WIDGET_VARIABLES_TABLE_DELETE " : " हटाएं " ,
     " CAM_WIDGET_VARIABLES_TABLE_ABORT " : " बीच में बंद करें " ,
     " CAM_WIDGET_VARIABLES_TABLE_DIALOGUE " : " यकीन है कि आप '{{नाम}}' को हटाना चाहते हैं कर रहे हैं " ,
-    " CAM_WIDGET_VARIABLE_DIALOG_INSPECT " : " {{name}} चर  का निरीक्षण करें ,
+    " CAM_WIDGET_VARIABLE_DIALOG_INSPECT " : " {{name}} चर " का निरीक्षण करें ,
     " CAM_WIDGET_VARIABLE_DIALOG_LABEL_OBJECT_TYPE " : " ऑब्जेक्ट प्रकार का नाम: " ,
     " CAM_WIDGET_VARIABLE_DIALOG_LABEL_SERIALIZATION " : " सीरियल डेटा स्वरूप: " ,
     " CAM_WIDGET_VARIABLE_DIALOG_LABEL_SERIALIZED_VALUE " : " धारावाहिक मूल्य " ,
@@ -122,7 +122,7 @@
     " CAM_WIDGET_VARIABLE_VALUE " : " चर का मान " ,
     " CAM_WIDGET_VARIABLE_UNDEFINED " : " <अपरिभाषित> , "
     " CAM_WIDGET_VARIABLE_RESET " : " पिछले या डिफ़ॉल्ट मान पर पुनः सेट करें , "
-    " CAM_WIDGET_STRING_DIALOG_TITLE " : " निरीक्षण \" {{नाम}} \ चर " ,
+    " CAM_WIDGET_STRING_DIALOG_TITLE " : " निरीक्षण \" {{नाम}} \ " चर " ,
     " CAM_WIDGET_STRING_DIALOG_LABEL_VALUE " : " मान " ,
     " CAM_WIDGET_STRING_DIALOG_LABEL_CLOSE " : " बंद करें " ,
     " FILTER_CREATE " : " एक फ़िल्टर बनाकर " ,
@@ -498,7 +498,7 @@
       " sameElse " : " एल "
     },
     " सापेक्ष समय " : {
-      " भविष्य " : " % s  में ,
+      " भविष्य " : " % s " में ,
       " अतीत " : " % s पहले " ,
       " s " : " कुछ सेकंड " ,
       " m " : " एक मिनट " ,
