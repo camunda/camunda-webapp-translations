@@ -27,6 +27,7 @@ A [Video Tutorial](https://blog.camunda.org/post/2014/12/internationalization-in
 | Danish               | 7.6.0   | [Tasklist](/tasklist/da.json)                                                                                     | [Lasse Lindgård](https://github.com/lldata)                                                                                          |
 | Italian              | 7.12.0  | [Tasklist](/tasklist/it.json)                                                                                     | [Giacomo Cappellini](https://github.com/arkanoid87)                                                                                  |
 | Turkish              | 7.12.0  | [Tasklist](/tasklist/tr.json)                                                                                     | Mustafa Cem Ertem, [Elif T. Kuş](https://github.com/elifkus)                                        |
+| Nepali              | 7.14.0  | [Tasklist](/tasklist/np.json)                                                                                     | [Ashish Maharjan](https://github.com/AshishMhrzn10)                                        |
 
 ### Contribute!
 
