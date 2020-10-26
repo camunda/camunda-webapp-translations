@@ -1,10 +1,10 @@
 {
-  " लेबल " : {
-    " APP_VENDOR " : " Camunda " ,
-    " ADMIN_APP " : " व्यवस्थापक " ,
-    " TASKLIST_APP " : " कार्यसूची " ,
-    " COCKPIT_APP " : " कॉकपिट " ,
-   " TOGGLE_NAVIGATION " : " नेविगेशन बदलें " ,
+  "labels" : {
+    "APP_VENDOR" : "Camunda" ,
+    "ADMIN_APP" : "व्यवस्थापक" ,
+    " TASKLIST_APP " : "कार्यसूची" ,
+    " COCKPIT_APP " : "कॉकपिट" ,
+   " TOGGLE_NAVIGATION" : " नेविगेशन बदलें " ,
     " SUBMIT " : " सबमिट करें " ,
     " SAVE " : " बचाओ " ,
     " START " : " प्रारंभ " ,
