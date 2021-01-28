@@ -1,4 +1,4 @@
-{
+﻿{
   "labels": {
     "APP_VENDOR": "Camunda",
     "ADMIN_APP": "Admin",
@@ -174,7 +174,7 @@
     "TELEMETRY_INTRODUCTION_EXPLANATION_2": "That’s why we’re introducing voluntary product telemetry: so we can understand which parts of the engine need improving and which features we should offer next.",
     "TELEMETRY_INTRODUCTION_EXPLANATION_3": "By enabling telemetry, you can:",
     "TELEMETRY_INTRODUCTION_COMMUNITY": "Contribute to the Camunda community",
-    "TELEMETRY_INTRODUCTION_IMPROVE": "Help us improve the BPM engine",
+    "TELEMETRY_INTRODUCTION_IMPROVE": "Help us improve the Camunda Platform engine",
     "TELEMETRY_DETAILS_HEADER": "What does telemetry measure?",
     "TELEMETRY_DETAILS_META_DATA": "Metadata",
     "TELEMETRY_DETAILS_META_DATA_WHAT": "Product version, database technology, application server, and pseudonymized installation ID.",
@@ -185,8 +185,8 @@
     "TELEMETRY_DETAILS_DOCUMENTATION_1": "You can find a complete list of data the telemetry service can send in the",
     "TELEMETRY_DETAILS_DOCUMENTATION_2": "documentation",
     "TELEMETRY_PREFERENCES_HEADER": "Privacy preferences",
-    "TELEMETRY_PREFERENCES_DETAILS": "To enhance the user experience, the Camunda BPM engine can integrate with Camunda Services GmbH, which requires external network requests. Please select your preference.",
-    "TELEMETRY_PREFERENCES_META": "Allow Camunda BPM Runtime to send usage statistics.",
+    "TELEMETRY_PREFERENCES_DETAILS": "To enhance the user experience, the Camunda Platform engine can integrate with Camunda Services GmbH, which requires external network requests. Please select your preference.",
+    "TELEMETRY_PREFERENCES_META": "Allow Camunda Platform Runtime to send usage statistics.",
     "TELEMETRY_PREFERENCES_META_DETAILS_1": "We use this information particularly to provide you a stable and improved product experience in the environment you are using. This allows Camunda to collect information about the product version, technical environment and how features are used.",
     "TELEMETRY_PREFERENCES_META_DETAILS_2": "This information is generally technical and aggregated but may include limited and pseudonymized personal data.",
     "TELEMETRY_FOOTER_LEARN_MORE": "Learn more:",
