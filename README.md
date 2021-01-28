@@ -1,7 +1,7 @@
-# Camunda Webapp Translations
+﻿# Camunda Webapp Translations
 
 
-This Camunda BPM project provides translations for Camunda Tasklist, Cockpit Basic/Full and Admin.
+This Camunda Platform project provides translations for Camunda Tasklist, Cockpit Basic/Full and Admin.
 
 ### Get Started
 
