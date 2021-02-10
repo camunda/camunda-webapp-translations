@@ -1484,6 +1484,8 @@
     "PLGN_SEAR_CONFIGURATION": "Configuration",
     "PLGN_SEAR_INSTANCE_ID": "Instance ID",
     "PLGN_SEAR_TIME": "Time",
+    "PLGN_SEAR_FAILED_JOB": "Failed Job",
+    "PLGN_SEAR_FAILED_EXT_TASK": "Failed External Task",
     "PLGN_SEAR_PROCESS_DEFINITION_ID": "Process Definition ID",
     "PLGN_SEAR_SUPER_PROCESS_INSTACE_ID": "Super Process Instance ID",
     "PLGN_SEAR_SUPER_CASE_INSTANCE_ID": "Super Case Instance ID",
