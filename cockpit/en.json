@@ -482,6 +482,7 @@
     "REPOSITORY_RESOURCES_FAILURE": "Failure:",
     "REPOSITORY_RESOURCES_FAILURE_MSN": "Loading the resources finished with failures. Try to refresh the page to try again.",
     "REPOSITORY_RESOURCES_NO_SRC_AVAILABLE": "No resources available.",
+    "REPOSITORY_RESOURCES_SOURCE": "Raw Data:",
     "PLUGIN_TASK_DASHBOARD_TITLE": "Task Dashboard",
     "PLUGIN_TASK_ASSIGNED_TO_USER": "assigned to a user",
     "PLUGIN_TASK_ASSIGNED_TO_ONE": "assigned to 1 or more groups",
