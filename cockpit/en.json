@@ -37,6 +37,7 @@
     "DOUBLE": "Double",
     "DATE": "Date",
     "STRING": "String",
+    "WITHOUT_DUE_DATE": "Without Due Date",
     "AUTH_LOGOUT_SUCCESSFUL": "Logout successful",
     "AUTH_LOGOUT_THANKS": "Thank you for using Camunda today. Have a great {{dayContext}}!",
     "AUTH_DAY_CONTEXT_MORNING": "morning",
