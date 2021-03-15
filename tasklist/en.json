@@ -245,6 +245,7 @@
     "FOLLOW_UP_DATE": "Follow-up date",
     "FOLLOW_UP": "Follow-up",
     "DUE_DATE": "Due date",
+    "WITHOUT_DUE_DATE": "Without Due Date",
     "DUE": "Due",
     "ASSIGNEE": "Assignee",
     "ACTION": "Action",
