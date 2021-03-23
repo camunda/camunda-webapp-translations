@@ -22,6 +22,7 @@
     "LOADING": "Loading…",
     "SUCCESS": "Success",
     "ERROR": "Error",
+    "FORM_FAILURE": "Form failure:",
     "REQUIRED_FIELD": "Required field",
     "REQUIRED_INTEGER_FIELD": "Value must be an integer",
     "REQUIRED_HEX_COLOR_FIELD": "Value must be an hexadecimal color",
