@@ -1034,7 +1034,6 @@
     "PLGN_BATCH_SET_VARIABLES_VARIABLE_NAME": "Name",
     "PLGN_BATCH_SET_VARIABLES_VARIABLE_TYPE": "Type",
     "PLGN_BATCH_SET_VARIABLES_VARIABLE_VALUE": "Value",
-    "PLGN_BATCH_SET_VARIABLES_VARIABLE_": "Value",
     "PLGN_BTCH_INSTANCES_PROCESSED": "Instances are being processed… Please wait.",
     "PLGN_BTCH_OPERATION_EXECUTED": "Operation is being executed.\nA new batch with ID {{id}} has been created.",
     "PLGN_BTCH_OPERATION_FINISHED": "Operation finished successfully",

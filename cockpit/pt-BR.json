@@ -1020,7 +1020,6 @@
     "PLGN_BATCH_SET_VARIABLES_VARIABLE_NAME": "Nome",
     "PLGN_BATCH_SET_VARIABLES_VARIABLE_TYPE": "Tipo",
     "PLGN_BATCH_SET_VARIABLES_VARIABLE_VALUE": "Valor",
-    "PLGN_BATCH_SET_VARIABLES_VARIABLE_": "Valor",
     "PLGN_BTCH_INSTANCES_PROCESSED": "Instâncias estão sendo processadas... Favor aguardar.",
     "PLGN_BTCH_OPERATION_EXECUTED": "A operação esta sendo executadaOperation is being executed.\nUm novo lote com o ID {{id}} foi criado.",
     "PLGN_BTCH_OPERATION_FINISHED": "Operação finalizada com sucesso",
