@@ -1,7 +1,8 @@
-﻿# Camunda Webapp Translations
+[![Community Project](https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700)](https://github.com/camunda-community-hub/community) 
 
+# Camunda Webapp Translations
 
-This Camunda Platform project provides translations for Camunda Tasklist, Cockpit Basic/Full and Admin.
+This Camunda Platform project provides translations for Camunda Tasklist, Cockpit Basic/Full and Admin. Community translations in languages other than English are contributed and maintained by the broader Camunda community, and are not officially supported or maintained by Camunda.
 
 ### Get Started
 
