@@ -1,4 +1,3 @@
-[![Community Project](https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700)](https://github.com/camunda-community-hub/community) 
 
 # Camunda Webapp Translations
 
