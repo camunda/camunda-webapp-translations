@@ -2301,7 +2301,7 @@
     "TELEMETRY_SUCCESS_HEADING": "Sucesso",
     "TELEMETRY_SUCCESS": "A configuração da telemetria foi salva com sucesso",
     "TELEMETRY_ERROR_STATUS": "Erro",
-    "TELEMETRY_ERROR_MESSAGE": "Não foi possível salvar sua configuração. Por favor, tente novamente.",
+    "TELEMETRY_ERROR_MESSAGE": "Não foi possível salvar sua configuração. Por favor, tente novamente."
   },
   "dateLocales": {
     "months": [
