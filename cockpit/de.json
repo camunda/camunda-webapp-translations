@@ -364,6 +364,8 @@
     "PLUGIN_CALLED_PROCESS_DEFINITIONS_RUNNING_LABEL": "Laufend",
     "PLUGIN_ACTIVITY_DEFINITION_SHOW_CALLED_PROCESS_DEFINITION": "Referenzierte Prozessdefinition zeigen",
     "PLUGIN_ACTIVITY_DEFINITION_CALLED_NOT_RESOLVABLE": "Referenzierte Prozessdefinition wird während der Ausführung bestimmt",
+    "PLUGIN_ACTIVITY_DEFINITION_CALLED_DYNAMIC_RESOLVABLE": "Momentan ausgeführte Prozessdefinition zeigen",
+    "PLUGIN_ACTIVITY_DEFINITION_CALLED_DYNAMIC_MULTI_RESOLVABLE": "Momentan ausgeführte Prozessdefinitionen zeigen",
     "PLUGIN_PROCESS_INSTANCE_STATE": "Status",
     "PLUGIN_PROCESS_INSTANCE_ID": "ID",
     "PLUGIN_PROCESS_INSTANCE_START_TIME": "Start-Zeit",
