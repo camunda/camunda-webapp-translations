@@ -1,0 +1,76 @@
+// https://github.com/camunda/jenkins-global-shared-library
+// https://github.com/camunda/cambpm-jenkins-shared-library
+@Library(['camunda-ci', 'cambpm-jenkins-shared-library@release-ci']) _
+
+pipeline {
+  agent {
+    node {
+      label 'jenkins-job-runner'
+    }
+  }
+  environment {
+    CAMBPM_LOGGER_LOG_LEVEL = 'DEBUG'
+  }
+  parameters {
+    string name: 'RELEASE_VERSION', defaultValue: '7.16.99-TEST', description: 'The version to be released.'
+    string name: 'MAJOR_VERSION', defaultValue: '7.16', description: 'The current major version of the project.'
+    string name: 'NEXT_DEVELOPMENT_VERSION', defaultValue: '7.16.0-SNAPSHOT', description: 'The next development version to set.'
+    booleanParam name: 'PUSH_TO_REMOTE', defaultValue: false, description: 'Push the changes back to remote repositories.'
+    choice name: 'RELEASE_TYPE', choices: ['ALPHA', 'FINAL'], description: 'In case of ALPHA release, all artifacts will be uploaded to nightly folders, otherwise to GA folder locations.'
+  }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '2'))
+    throttleJobProperty(
+        throttleEnabled: true,
+        throttleOption: 'project',
+        maxConcurrentTotal: 1
+    )
+  }
+  stages {
+    stage('Create Version Tags') {
+      agent {
+        node {
+          label 'centos-stable'
+        }
+      }
+      steps {
+        cambpmGitCheckout([branch: env.BRANCH_NAME, credentialsId: 'github-cambpm-ci-pipeline-app'])
+        cambpmUpdateProjectVersion([
+            newVersion: RELEASE_VERSION,
+            commit    : true,
+            tag       : true,
+            updateMvn: false,
+            updateNpm: true,
+            commitMsg : "\"chore(release): Prepare release: set version to $RELEASE_VERSION\""
+        ])
+        cambpmUpdateProjectVersion([
+            newVersion: NEXT_DEVELOPMENT_VERSION,
+            commit    : true,
+            tag       : false,
+            updateMvn: false,
+            updateNpm: true,
+            commitMsg : "\"chore(release): Prepare next development version: $NEXT_DEVELOPMENT_VERSION\""
+        ])
+      }
+      post {
+        success {
+          script {
+            if (PUSH_TO_REMOTE) {
+              cambpmGitPush([branch: env.BRANCH_NAME, pushTags: true])
+            }
+          }
+        }
+      }
+    }
+  }
+  post {
+    changed {
+      script {
+        if (!agentDisconnected()) {
+          cambpmSendEmailNotification()
+        }
+      }
+    }
+  }
+}
+
