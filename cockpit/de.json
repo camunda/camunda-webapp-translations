@@ -2304,7 +2304,7 @@
     "PLGN_CORRELATE_MSG_DIALOG_PLACEHOLDER": "Nachrichtennamen eingeben oder auswählen.",
     "PLGN_CORRELATE_MSG_DIALOG_BTN_CLOSE": "Schließen",
     "PLGN_CORRELATE_MSG_DIALOG_BTN_OPEN": "Stapelverarbeitung öffnen",
-    "PLGN_CORRELATE_MSG_NAME": "Message Name",
+    "PLGN_CORRELATE_MSG_NAME": "Nachrichtenname",
     "DEF_VIEW_CHANGE_VERSION_NOT_UNIQUE": "Ausgewählte Version ist nicht eindeutig!",
     "FIRST_LOGIN_INFO": "Anscheinend verwenden Sie die Webapps zum ersten mal. Besuchen Sie die <a href=\"/camunda-welcome\">Camunda Welcome Seite</a> für einen schnellen Überblick.",
     "FIRST_LOGIN_HEADING": "Willkommen bei Camunda",
