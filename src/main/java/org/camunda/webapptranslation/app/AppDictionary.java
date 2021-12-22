@@ -13,9 +13,8 @@ import org.camunda.webapptranslation.SynchroParams;
 import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportInt;
 
 
-
 public class AppDictionary {
-    public final static String PREFIX_PLEASE_TRANSLATE="";
+
 
     private File path;
     private String language;
@@ -23,28 +22,32 @@ public class AppDictionary {
      * Dictionary, JSON format is a hierarchy collection of String or list
      * Something like
      * {
-     *   "labels": {
-     *     "APP_VENDOR": "Camunda",
-     *   },
-     *    "monthsShort": [
-     *       "Jan",
-     *       "Feb",
-     *       "Mar"
-     *       ],
-     *   "week": {
-     *       "dow": 1,
-     *       "doy": 4
-     *     }
+     * "labels": {
+     * "APP_VENDOR": "Camunda",
+     * },
+     * "monthsShort": [
+     * "Jan",
+     * "Feb",
+     * "Mar"
+     * ],
+     * "week": {
+     * "dow": 1,
+     * "doy": 4
+     * }
      * }
      */
-    private Map<String,Object> dictionary;
+    private Map<String, Object> dictionary;
     /**
      * marker to know if the dictionary is modified or not
      */
     private boolean dictionaryIsModified = false;
+
+    public final static String PREFIX_PLEASE_TRANSLATE = "";
+
     public AppDictionary(File path, String language) {
         this.path = path;
         this.language = language;
+        this.dictionary = new HashMap<>();
     }
 
 
@@ -56,6 +59,7 @@ public class AppDictionary {
 
     /**
      * Check if the file relative to the dictionary exists
+     *
      * @return true if the file exists
      */
     public boolean existFile() {
@@ -69,21 +73,33 @@ public class AppDictionary {
     /* Read/Write */
     /*                                                                      */
     /* -------------------------------------------------------------------- */
-    public boolean read(ReportInt report ) {
+    public boolean read(ReportInt report) {
         AppDictionarySerialize serialize = new AppDictionarySerialize(this);
-        dictionary=new HashMap<>();
-        boolean status=serialize.read(report);
-        dictionaryIsModified=false;
+        dictionary = new HashMap<>();
+        boolean status = serialize.read(report);
+        dictionaryIsModified = false;
         return status;
     }
-        public boolean write(ReportInt report) {
+
+    /**
+     * Write the dictionary
+     *
+     * @param report report used to report any error
+     * @return true if the writing correctly took place
+     */
+    public boolean write(ReportInt report) {
         AppDictionarySerialize serialize = new AppDictionarySerialize(this);
-        boolean status=serialize.write(report);
+        boolean status = serialize.write(report);
         if (status)
-            dictionaryIsModified=false;
+            dictionaryIsModified = false;
         return status;
     }
-        public boolean isModified() {
+
+    /**
+     * isModified
+     * @return true if the dictionary change (keys added, removed)
+     */
+    public boolean isModified() {
         return dictionaryIsModified;
     }
 
@@ -101,36 +117,64 @@ public class AppDictionary {
      * CheckKeys
      * Verify that this dictionary is complete in regard of the reference dictionary
      */
-    DicoStatus checkKeys(AppDictionary referenceDictionary, boolean reportAllDifferences)
-    {
+    DicoStatus checkKeys(AppDictionary referenceDictionary) {
         DicoStatus dicoStatus = new DicoStatus();
-        for (String key:referenceDictionary.getDictionary().keySet()) {
-            if (! dictionary.containsKey(key)) {
+
+        checkMissingKeys(referenceDictionary, dicoStatus);
+        checkIncorrectsObject(referenceDictionary, dicoStatus);
+        checkTooMuchKeys(referenceDictionary, dicoStatus);
+
+        return dicoStatus;
+    }
+
+    /**
+     * run the reference dictionary. Verify that the key exist in the local dictionary.
+     *
+     * @param referenceDictionary reference dictionary
+     * @param dicoStatus          complete the status
+     */
+    private void checkMissingKeys(AppDictionary referenceDictionary, DicoStatus dicoStatus) {
+        // Key in the ref
+        for (String key : referenceDictionary.getDictionary().keySet()) {
+            if (!dictionary.containsKey(key)) {
                 dicoStatus.nbMissingKeys++;
-                if (reportAllDifferences)
-                    dicoStatus.missingKeys.add(key);
-            } else {
-                // check the two keys must be indentical (String <-> String or List<->List)
+                dicoStatus.missingKeys.add(key);
+            }
+        }
+    }
+
+    /**
+     * run the dictionary and compare if the value on the dictionary and the value in the reference are the same type
+     * @param referenceDictionary reference dictionary
+     * @param dicoStatus   complete the status
+     */
+    private void checkIncorrectsObject(AppDictionary referenceDictionary, DicoStatus dicoStatus) {
+        // Key in the ref
+        for (String key : referenceDictionary.getDictionary().keySet()) {
+            if ( dictionary.containsKey(key)) {
+                // check: the two keys must be identical (String <-> String or List<->List)
                 Object localValue = dictionary.get(key);
                 Object referenceValue = referenceDictionary.getDictionary().get(key);
-                if (localValue!=null && referenceValue!=null && ! localValue.getClass().equals(referenceValue.getClass())) {
+                if (localValue != null && referenceValue != null && !localValue.getClass().equals(referenceValue.getClass())) {
                     dicoStatus.nbIncorrectKeyClass++;
-                    dicoStatus.incorrectClass.add(key+ ":"+referenceValue.getClass().toString()+" expected, "+localValue.getClass().toString()+" found");
+                    dicoStatus.incorrectClass.add(key + ":" + referenceValue.getClass() + " expected, " + localValue.getClass() + " found");
                 }
             }
         }
-        for (String key: dictionary.keySet()) {
+    }
+    private void checkTooMuchKeys(AppDictionary referenceDictionary, DicoStatus dicoStatus) {
+        for (String key : dictionary.keySet()) {
+            if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE))
+                continue; // ignore it
             if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE))
-                key=key.substring(0, key.length()-SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE.length());
-            if (! referenceDictionary.getDictionary().containsKey(key)) {
+                key = key.substring(0, key.length() - SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE.length());
+            if (!referenceDictionary.getDictionary().containsKey(key)) {
                 dicoStatus.nbTooMuchKeys++;
-                if (reportAllDifferences)
-                    dicoStatus.tooMuchKeys.add(key);
-
+                dicoStatus.tooMuchKeys.add(key);
             }
         }
-        return dicoStatus;
     }
+
     /**
      * Status of the comparison between a dictionary and the reference
      */
@@ -138,38 +182,40 @@ public class AppDictionary {
         /**
          * Key is missing in the dictionary. A key, present in the reference dictionary, does not exist in the local
          */
-        public int nbMissingKeys =0;
-        public Set<String> missingKeys =new HashSet<>();
+        public int nbMissingKeys = 0;
+        public Set<String> missingKeys = new HashSet<>();
         /**
          * Key define in the dictionary, but not exist in the reference dictionary
          */
-        public int nbTooMuchKeys =0;
-        public Set<String> tooMuchKeys=new HashSet<>();
+        public int nbTooMuchKeys = 0;
+        public Set<String> tooMuchKeys = new HashSet<>();
         /**
          * Key may be a String or a List of Strings. Class are not identical between the reference dictionary an the local
          */
-        public int nbIncorrectKeyClass =0;
-        public Set<String> incorrectClass=new HashSet<>();
+        public int nbIncorrectKeyClass = 0;
+        public Set<String> incorrectClass = new HashSet<>();
     }
 
 
     /**
      * Add a Key in the dictionary
-     * @param key key to add
+     *
+     * @param key   key to add
      * @param value value to add
      */
     public void addKey(String key, Object value) {
         dictionary.put(key, value);
-        dictionaryIsModified=true;
+        dictionaryIsModified = true;
     }
 
     /**
      * Remove the key
+     *
      * @param key key to remove
      */
     public void removeKey(String key) {
         dictionary.remove(key);
-        dictionaryIsModified=true;
+        dictionaryIsModified = true;
     }
 
     /* -------------------------------------------------------------------- */
@@ -182,20 +228,25 @@ public class AppDictionary {
         return (dictionary != null && dictionary.containsKey(key));
     }
 
-    public Map<String,Object> getDictionary() {
+    public Map<String, Object> getDictionary() {
         if (dictionary == null)
             return Collections.emptyMap();
         return dictionary;
     }
+
     /**
      * Return the file
      *
      * @return the file, path + language
      */
     protected File getFile() {
-        return new File(path + "/" + language + ".json");
+        return new File(path +File.separator+ language + ".json");
     }
 
+    /**
+     * Return the language managed by this dictionary
+     * @return the language
+     */
     public String getLanguage() {
         return language;
     }

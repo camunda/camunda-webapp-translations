@@ -36,7 +36,7 @@ public class AppDictionarySerialize {
              BufferedReader reader = new BufferedReader(isr)
         ) {
 
-            // Some dictionary are BOM UTF8, which is not correct.
+            // Some dictionaries are encoded in BOM UTF8, which is not correct.
             String str;
             StringBuilder readerStr = new StringBuilder();
             while ((str = reader.readLine()) != null) {
@@ -48,7 +48,9 @@ public class AppDictionarySerialize {
                 jsonComplete = jsonComplete.substring(1);
             Gson gson = new Gson();
             Map<String,Object> dictionaryJson = gson.fromJson(jsonComplete, Map.class);
-            convertToFlatList( dictionaryJson, "");
+            // a empty dictionary return a null JSON
+            if (dictionaryJson!=null)
+                convertToFlatList( dictionaryJson, "");
             return true;
         } catch (Exception e) {
             report.severe(AppDictionary.class, String.format(" Error during reading dictionary [%s] file[%s]", appDictionary.getLanguage(), file.getAbsolutePath()), e);
@@ -71,8 +73,8 @@ public class AppDictionarySerialize {
                 String fileName = file.getName();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy_HHmmss");
 
-                fileName = fileName.replace(".json", LocalDateTime.now().format(formatter) + ".bak");
-                File destFile = new File(backupDirectory.getAbsolutePath() + "/" + fileName);
+                fileName = fileName.replace(".json", "_"+LocalDateTime.now().format(formatter) + ".bak");
+                File destFile = new File(backupDirectory.getAbsolutePath() +  File.separator + fileName);
 
                 file.renameTo(destFile);
             }
@@ -81,6 +83,7 @@ public class AppDictionarySerialize {
             return false;
         }
 
+        // we want to sort the dictionary
 
         try (FileWriter writer = new FileWriter(file.getAbsolutePath())) {
             //We can write any JSONArray or JSONObject instance to the file
@@ -109,8 +112,6 @@ public class AppDictionarySerialize {
      * Get all keys. The dictionary is a hierarchy, like "{labels { APPVENDOR = ""}}. Returns this value as "labels.APPVENDOR"
      */
     private void convertToFlatList(Map<String,Object> jsonDico, String hierarchy) {
-
-
         for (Map.Entry<String, Object> entry : jsonDico.entrySet()) {
             if (entry.getValue() instanceof Map) {
                 convertToFlatList((Map<String,Object>) entry.getValue(), hierarchy + entry.getKey() + ".");
@@ -124,11 +125,16 @@ public class AppDictionarySerialize {
         }
     }
 
+    /**
+     * Convert the flat list stored in the dictionary, to a hierarchy, to save it in Json
+     * a TreeMap is used to order alphabetically keys
+     * @return a hierarchy of Map / Keys
+     */
     private Map<String,Object> convertFromFlatList() {
-        Map<String,Object> dicoObject = new HashMap<>();
+        Map<String,Object> dicoObject = new TreeMap<>();
         for (Map.Entry<String, Object> entry : appDictionary.getDictionary().entrySet()) {
             StringTokenizer st = new StringTokenizer(entry.getKey(), ".");
-            List<String> tokens = new ArrayList();
+            List<String> tokens = new ArrayList<>();
             while (st.hasMoreTokens()) {
                 tokens.add(st.nextToken()); // use already extracted value
             }
@@ -151,7 +157,7 @@ public class AppDictionarySerialize {
             if (currentContainer.containsKey(tokens.get(i)))
                 currentContainer = (Map<String,Object>) currentContainer.get(tokens.get(i));
             else {
-                Map<String,Object> subContainer = new HashMap<String,Object>();
+                Map<String,Object> subContainer = new TreeMap<>();
                 currentContainer.put(tokens.get(i), subContainer);
                 currentContainer = subContainer;
             }

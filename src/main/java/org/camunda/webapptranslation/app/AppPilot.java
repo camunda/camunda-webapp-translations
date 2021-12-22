@@ -5,8 +5,8 @@ package org.camunda.webapptranslation.app;
 /*                                                                      */
 /* Manage an application (a directory)                                  */
 /*                                                                      */
-/* The class dectect all languages present (and missing), compare each  */
-/* dictionary with the referentiel language. It can just play to detect */
+/* The class detects  all languages present (and missing), compare each  */
+/* dictionary with the referential  language. It can just play to detect */
 /* missing sentences, or complete it                                    */
 /*                                                                      */
 /* -------------------------------------------------------------------- */
@@ -65,6 +65,9 @@ public class AppPilot {
         // check each dictionary
         report.info(AppPilot.class, "----- Folder " + folder);
         for (String language : expectedLanguages) {
+            if (synchroParams.getOnlyCompleteOneLanguage() != null && !synchroParams.getOnlyCompleteOneLanguage().equals(language))
+                continue;
+
             if (language.equals(referenceLanguage)) {
                 report.info(AppPilot.class, headerLanguage(language) + "Referentiel");
                 continue;
@@ -79,14 +82,14 @@ public class AppPilot {
                 // error already reported
                 continue;
             } else {
-                AppDictionary.DicoStatus dicoStatus = dico.checkKeys(referenceDictionary, synchroParams.getDetection() == SynchroParams.DETECTION.FULL);
+                AppDictionary.DicoStatus dictionaryStatus = dico.checkKeys(referenceDictionary);
                 List<String> listReports = new ArrayList<>();
-                if (dicoStatus.nbMissingKeys > 0)
-                    listReports.add("Missing " + dicoStatus.nbMissingKeys + " keys");
-                if (dicoStatus.nbTooMuchKeys > 0)
-                    listReports.add("Too much " + dicoStatus.nbTooMuchKeys + " keys");
-                if (dicoStatus.nbIncorrectKeyClass > 0)
-                    listReports.add("Incorrect class " + dicoStatus.nbIncorrectKeyClass + " keys");
+                if (dictionaryStatus.nbMissingKeys > 0)
+                    listReports.add("Missing " + dictionaryStatus.nbMissingKeys + " keys");
+                if (dictionaryStatus.nbTooMuchKeys > 0)
+                    listReports.add("Too much " + dictionaryStatus.nbTooMuchKeys + " keys");
+                if (dictionaryStatus.nbIncorrectKeyClass > 0)
+                    listReports.add("Incorrect class " + dictionaryStatus.nbIncorrectKeyClass + " keys");
 
                 if (listReports.isEmpty())
                     report.info(AppPilot.class, headerLanguage(language) + "OK");
@@ -94,19 +97,7 @@ public class AppPilot {
                     // report errors
                     report.info(AppPilot.class,
                             headerLanguage(language)
-                                    + listReports.stream().collect(Collectors.joining(",")));
-                    if (synchroParams.getDetection() == SynchroParams.DETECTION.FULL) {
-                        if (!dicoStatus.missingKeys.isEmpty())
-                            report.info(AppPilot.class,
-                                    INDENTATION + "  MISSING:" + dicoStatus.missingKeys.stream().collect(Collectors.joining(",")));
-                        if (!dicoStatus.tooMuchKeys.isEmpty())
-                            report.info(AppPilot.class,
-                                    INDENTATION + "  TOO MUCH:" + dicoStatus.tooMuchKeys.stream().collect(Collectors.joining(",")));
-                        if (!dicoStatus.incorrectClass.isEmpty())
-                            report.info(AppPilot.class,
-                                    INDENTATION + "  INCORRECT CLASS:" + dicoStatus.incorrectClass.stream().collect(Collectors.joining(",")));
-                    }
-
+                                    + String.join(",", listReports));
                 }
             }
         }
@@ -115,8 +106,8 @@ public class AppPilot {
     /**
      * Do the completion on each dictionary
      *
-     * @param synchroParams
-     * @param report
+     * @param synchroParams parameter object
+     * @param report report object
      */
     public void completion(SynchroParams synchroParams, ReportInt report) {
         AppDictionary referenceDictionary = new AppDictionary(folder, referenceLanguage);
@@ -124,61 +115,105 @@ public class AppPilot {
 
         // check each dictionary
         report.info(AppPilot.class, "----- Folder " + folder);
-        if (! folder.getAbsolutePath().endsWith("welcome"))
-            return;
 
         for (String language : expectedLanguages) {
-            if (! language.equals("fr"))
+            if (synchroParams.getOnlyCompleteOneLanguage() != null && !synchroParams.getOnlyCompleteOneLanguage().equals(language))
                 continue;
 
             if (language.equals(referenceLanguage)) {
-                report.info(AppPilot.class, headerLanguage(language) + "Referentiel");
+                report.info(AppPilot.class, headerLanguage(language) + "Referential");
                 continue;
             }
 
-            AppDictionary dico = new AppDictionary(folder, language);
-            if (!dico.existFile()) {
-                report.info(AppPilot.class, headerLanguage(language) + "Not exist (" + referenceDictionary.getDictionary().size() + " missing keys)");
-                // create all keys
-                for (Map.Entry<String, Object> entry : referenceDictionary.getDictionary().entrySet()) {
-                    if (entry.getValue() instanceof Long || entry.getValue() instanceof Integer) {
-                        dico.addKey(entry.getKey(), entry.getValue());
-                    } else {
-                        dico.addKey(entry.getKey() + SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE, entry.getValue());
-                    }
-                }
-                continue;
-            }
+            AppDictionary appDictionary = new AppDictionary(folder, language);
+
+
+            //----------------  Read and complete
 
             // read the dictionary
-            if (!dico.read(report)) {
+            if (appDictionary.existFile() && !appDictionary.read(report)) {
                 // file exist, but not possible to read: better to have a look here
-                report.severe(AppPilot.class, "File [" + dico.getFile().getAbsolutePath() + "] exist, but impossible to read it: check it");
+                report.severe(AppPilot.class, "File [" + appDictionary.getFile().getAbsolutePath() + "] exist, but impossible to read it: check it");
                 continue;
             }
-                // check and complete
-                AppDictionary.DicoStatus dicoStatus = dico.checkKeys(referenceDictionary, true);
-                dicoStatus.missingKeys.stream()
-                        .forEach(key -> dico.addKey(key + SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE, referenceDictionary.getDictionary().get(key)));
+            // purge all TRANSLATE key
+            appDictionary.getDictionary()
+                    .entrySet()
+                    .removeIf(entry -> (entry.getKey().endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE)
+                            || entry.getKey().endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE)));
 
-                dicoStatus.tooMuchKeys.stream()
-                        .forEach(key -> dico.removeKey(key));
+            // check and complete
+            AppDictionary.DicoStatus dictionaryStatus = appDictionary.checkKeys(referenceDictionary);
+            List<String> listReports = new ArrayList<>();
 
-                dicoStatus.incorrectClass.stream()
+            if (dictionaryStatus.nbMissingKeys > 0) {
+                listReports.add("Add " + dictionaryStatus.nbMissingKeys + " keys");
+
+                dictionaryStatus.missingKeys.stream()
+                        .forEach(key -> manageAddKey(appDictionary, referenceDictionary, key)  );
+            }
+
+            if (dictionaryStatus.nbTooMuchKeys > 0) {
+                listReports.add("Remove " + dictionaryStatus.nbMissingKeys + " keys");
+                dictionaryStatus.tooMuchKeys.stream()
+                        .forEach(key -> appDictionary.removeKey(key));
+            }
+            if (dictionaryStatus.nbIncorrectKeyClass > 0) {
+                listReports.add("Replace " + dictionaryStatus.nbMissingKeys + " keys");
+                dictionaryStatus.incorrectClass
                         .forEach((key -> {
-                            dico.removeKey(key);
-                            dico.addKey(key + SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE, referenceDictionary.getDictionary().get(key));
-                            ;
+                            appDictionary.removeKey(key);
+                            manageAddKey(appDictionary, referenceDictionary, key);
                         }));
+            }
+            if (listReports.isEmpty())
+                listReports.add("Nothing done.");
+            report.info(AppPilot.class,
+                    headerLanguage(language)
+                            + String.join(",", listReports));
 
 
-            if (dico.isModified())
-                dico.write(report);
+            // -----------Write it
+            if (appDictionary.isModified()) {
+                boolean statusWrite = appDictionary.write(report);
+                if (statusWrite)
+                    report.info(AppPilot.class, INDENTATION + "   " + "Dictionary wrote with success.");
+                else
+                    report.severe(AppPilot.class, INDENTATION + "   " + "Error writing dictionary.");
+            }
         }
     }
 
-    private String headerLanguage(String langage) {
-        String label = INDENTATION + "[" + langage + "]          ";
+    /**
+     * Manage the way to add a key in the dictionary.
+     * @param appDictionary dictionary to add the key
+     * @param referenceDictionary referential dictionary, then the value can be accessed
+     * @param key key to add
+     */
+    private void manageAddKey(AppDictionary appDictionary, AppDictionary referenceDictionary, String key) {
+        Object valueReference = referenceDictionary.getDictionary().get(key);
+
+        if (valueReference instanceof Long || valueReference instanceof Integer|| valueReference instanceof  Double) {
+            // we add the key as it
+            if (valueReference instanceof Double) {
+                Double valueReferenceDouble = (Double) valueReference;
+                if (Math.round(valueReferenceDouble) == valueReferenceDouble)
+                    valueReference = valueReferenceDouble.intValue();
+            }
+            appDictionary.addKey(key, valueReference);
+        } else {
+            appDictionary.addKey(key + SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE, referenceDictionary.getDictionary().get(key));
+            appDictionary.addKey(key + SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE, referenceDictionary.getDictionary().get(key));
+        }
+    }
+
+    /**
+     * From the language, return a standard header string
+     * @param language language
+     * @return the standard header string
+     */
+    private String headerLanguage(String language) {
+        String label = INDENTATION + "[" + language + "]          ";
         return label.substring(0, INDENTATION.length() + 10) + " ... ";
     }
 }
