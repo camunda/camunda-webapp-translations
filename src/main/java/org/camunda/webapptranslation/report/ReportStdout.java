@@ -1,5 +1,7 @@
-package org.camunda.webapptranslation.org.camunda.webapptranslation;
+package org.camunda.webapptranslation.report;
 
+
+import org.camunda.webapptranslation.report.ReportInt;
 
 public class ReportStdout implements ReportInt {
 

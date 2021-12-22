@@ -1,8 +1,8 @@
-package org.camunda.webapptranslation.org.camunda.webapptranslation;
+package org.camunda.webapptranslation.report;
 
 import java.util.logging.Logger;
 
-public class ReportLogger implements ReportInt{
+public class ReportLogger implements ReportInt {
     private static Logger logger = Logger.getLogger(ReportLogger.class.getName());
 
     public void severe(Class<?> header, String msg, Exception e) {

@@ -12,11 +12,10 @@ package org.camunda.webapptranslation.app;
 /* -------------------------------------------------------------------- */
 
 import org.camunda.webapptranslation.SynchroParams;
-import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportInt;
+import org.camunda.webapptranslation.report.ReportInt;
 
 import java.io.File;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class AppPilot {
 

@@ -8,9 +8,9 @@ package org.camunda.webapptranslation;
 /* -------------------------------------------------------------------- */
 
 import org.camunda.webapptranslation.app.AppPilot;
-import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportInt;
-import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportLogger;
-import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportStdout;
+import org.camunda.webapptranslation.report.ReportInt;
+import org.camunda.webapptranslation.report.ReportLogger;
+import org.camunda.webapptranslation.report.ReportStdout;
 
 import java.io.File;
 import java.util.ArrayList;

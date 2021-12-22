@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.*;
 
 import org.camunda.webapptranslation.SynchroParams;
-import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportInt;
+import org.camunda.webapptranslation.report.ReportInt;
 
 
 public class AppDictionary {

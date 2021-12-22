@@ -1,4 +1,4 @@
-package org.camunda.webapptranslation.org.camunda.webapptranslation;
+package org.camunda.webapptranslation.report;
 
 public interface ReportInt {
 

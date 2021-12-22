@@ -6,7 +6,7 @@ package org.camunda.webapptranslation.app;
 /*                                                                      */
 /* -------------------------------------------------------------------- */
 
-import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportInt;
+import org.camunda.webapptranslation.report.ReportInt;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
