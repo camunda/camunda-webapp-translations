@@ -9,6 +9,7 @@ package org.camunda.webapptranslation;
 
 import org.camunda.webapptranslation.app.AppPilot;
 import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportInt;
+import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportLogger;
 import org.camunda.webapptranslation.org.camunda.webapptranslation.ReportStdout;
 
 import java.io.File;
@@ -28,23 +29,40 @@ public class SynchroTranslation {
             return;
         }
 
-        ReportInt report = new ReportStdout();
+        // get the report
+        final ReportInt report;
+        switch(synchroParams.getReport()) {
+            case LOGGER:
+                report = new ReportLogger();
+                break;
+            case STDOUT:
+                report = new ReportStdout();
+                break;
+            default:
+                report = new ReportStdout();
+        }
+        // get all dictionary folder
         List<File> listFolders = getDictionaryFolder(synchroParams, report);
 
+        // build all Application Pilot
         List<AppPilot> listAppPilot = new ArrayList<>();
-
         listFolders.forEach(folder -> listAppPilot.add(new AppPilot(folder, synchroParams.getReferenceLanguage())));
 
         // collect the list of expected languages
         Set<String> expectedLanguage = new HashSet<>();
         listAppPilot.forEach(pilot -> expectedLanguage.addAll(pilot.getLanguages()));
-
         listAppPilot.forEach(pilot->pilot.setExpectedLanguage(expectedLanguage));
 
-        if (synchroParams.isDetection()) {
-            listAppPilot.forEach(pilot -> pilot.detection(report));
-
+        // ---------- detection
+        if (synchroParams.getDetection() != SynchroParams.DETECTION.NO) {
+            report.info(SynchroTranslation.class, "=================================== Detection ===================================");
+            listAppPilot.forEach(pilot -> pilot.detection(synchroParams, report));
         }
+        if (synchroParams.getCompletion() != SynchroParams.COMPLETION.NO) {
+            report.info(SynchroTranslation.class, "=================================== Completion ===================================");
+            listAppPilot.forEach(pilot -> pilot.completion(synchroParams, report));
+        }
+
         System.out.println("The end");
     }
 
