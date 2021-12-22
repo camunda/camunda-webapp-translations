@@ -28,6 +28,7 @@ A [Video Tutorial](https://blog.camunda.org/post/2014/12/internationalization-in
 | Italian              | 7.12.0  | [Tasklist](/tasklist/it.json)                                                                                     | [Giacomo Cappellini](https://github.com/arkanoid87)                                                                                  |
 | Turkish              | 7.12.0  | [Tasklist](/tasklist/tr.json)                                                                                     | Mustafa Cem Ertem, [Elif T. Kuş](https://github.com/elifkus)                                                                         |
 | Nepali               | 7.14.0  | [Tasklist](/tasklist/np.json)                                                                                     | [Ashish Maharjan](https://github.com/AshishMhrzn10)                                                                                  |
+| French              | 7.16.0  | [Tasklist](/tasklist/fr.json), [Cockpit](/cockpit/fr.json), [Admin](/admin/fr.json), [Welcome](/welcome/fr.json) | [camunda services GmbH](https://github.com/camunda), [Pierre-Yves Monnet](https://github.com/pierre-yves-monnet)                                                                                  |
 
 ### Contribute!
 

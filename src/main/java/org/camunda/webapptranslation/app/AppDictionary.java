@@ -113,89 +113,6 @@ public class AppDictionary {
     /*                                                                      */
     /* -------------------------------------------------------------------- */
 
-    /**
-     * CheckKeys
-     * Verify that this dictionary is complete in regard of the reference dictionary
-     */
-    DicoStatus checkKeys(AppDictionary referenceDictionary) {
-        DicoStatus dicoStatus = new DicoStatus();
-
-        checkMissingKeys(referenceDictionary, dicoStatus);
-        checkIncorrectsObject(referenceDictionary, dicoStatus);
-        checkTooMuchKeys(referenceDictionary, dicoStatus);
-
-        return dicoStatus;
-    }
-
-    /**
-     * run the reference dictionary. Verify that the key exist in the local dictionary.
-     *
-     * @param referenceDictionary reference dictionary
-     * @param dicoStatus          complete the status
-     */
-    private void checkMissingKeys(AppDictionary referenceDictionary, DicoStatus dicoStatus) {
-        // Key in the ref
-        for (String key : referenceDictionary.getDictionary().keySet()) {
-            if (!dictionary.containsKey(key)) {
-                dicoStatus.nbMissingKeys++;
-                dicoStatus.missingKeys.add(key);
-            }
-        }
-    }
-
-    /**
-     * run the dictionary and compare if the value on the dictionary and the value in the reference are the same type
-     * @param referenceDictionary reference dictionary
-     * @param dicoStatus   complete the status
-     */
-    private void checkIncorrectsObject(AppDictionary referenceDictionary, DicoStatus dicoStatus) {
-        // Key in the ref
-        for (String key : referenceDictionary.getDictionary().keySet()) {
-            if ( dictionary.containsKey(key)) {
-                // check: the two keys must be identical (String <-> String or List<->List)
-                Object localValue = dictionary.get(key);
-                Object referenceValue = referenceDictionary.getDictionary().get(key);
-                if (localValue != null && referenceValue != null && !localValue.getClass().equals(referenceValue.getClass())) {
-                    dicoStatus.nbIncorrectKeyClass++;
-                    dicoStatus.incorrectClass.add(key + ":" + referenceValue.getClass() + " expected, " + localValue.getClass() + " found");
-                }
-            }
-        }
-    }
-    private void checkTooMuchKeys(AppDictionary referenceDictionary, DicoStatus dicoStatus) {
-        for (String key : dictionary.keySet()) {
-            if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE))
-                continue; // ignore it
-            if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE))
-                key = key.substring(0, key.length() - SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE.length());
-            if (!referenceDictionary.getDictionary().containsKey(key)) {
-                dicoStatus.nbTooMuchKeys++;
-                dicoStatus.tooMuchKeys.add(key);
-            }
-        }
-    }
-
-    /**
-     * Status of the comparison between a dictionary and the reference
-     */
-    public class DicoStatus {
-        /**
-         * Key is missing in the dictionary. A key, present in the reference dictionary, does not exist in the local
-         */
-        public int nbMissingKeys = 0;
-        public Set<String> missingKeys = new HashSet<>();
-        /**
-         * Key define in the dictionary, but not exist in the reference dictionary
-         */
-        public int nbTooMuchKeys = 0;
-        public Set<String> tooMuchKeys = new HashSet<>();
-        /**
-         * Key may be a String or a List of Strings. Class are not identical between the reference dictionary an the local
-         */
-        public int nbIncorrectKeyClass = 0;
-        public Set<String> incorrectClass = new HashSet<>();
-    }
-
 
     /**
      * Add a Key in the dictionary
@@ -239,7 +156,7 @@ public class AppDictionary {
      *
      * @return the file, path + language
      */
-    protected File getFile() {
+    public File getFile() {
         return new File(path +File.separator+ language + ".json");
     }
 
