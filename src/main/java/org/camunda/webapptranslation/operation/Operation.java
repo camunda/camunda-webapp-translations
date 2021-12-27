@@ -12,7 +12,9 @@ package org.camunda.webapptranslation.operation;
 import org.camunda.webapptranslation.SynchroParams;
 import org.camunda.webapptranslation.app.AppDictionary;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public abstract class Operation {
@@ -24,38 +26,39 @@ public abstract class Operation {
      * CheckKeys
      * Verify that this dictionary is complete in regard of the reference dictionary
      */
-    protected DicoStatus checkKeys(AppDictionary dictionary, AppDictionary referenceDictionary) {
-        DicoStatus dicoStatus = new DicoStatus();
+    protected DictionaryStatus checkKeys(AppDictionary dictionary, AppDictionary referenceDictionary) {
+        DictionaryStatus dictionaryStatus = new DictionaryStatus();
 
-        checkMissingKeys(dictionary, referenceDictionary, dicoStatus);
-        checkIncorrectsObject(dictionary, referenceDictionary, dicoStatus);
-        checkTooMuchKeys(dictionary, referenceDictionary, dicoStatus);
+        checkMissingKeys(dictionary, referenceDictionary, dictionaryStatus);
+        checkIncorrectObject(dictionary, referenceDictionary, dictionaryStatus);
+        checkTooMuchKeys(dictionary, referenceDictionary, dictionaryStatus);
 
-        return dicoStatus;
+        return dictionaryStatus;
     }
 
     /**
      * run the reference dictionary. Verify that the key exist in the local dictionary.
      *
      * @param referenceDictionary reference dictionary
-     * @param dicoStatus          complete the status
+     * @param dictionaryStatus          complete the status
      */
-    private void checkMissingKeys(AppDictionary dictionary, AppDictionary referenceDictionary, DicoStatus dicoStatus) {
+    private void checkMissingKeys(AppDictionary dictionary, AppDictionary referenceDictionary, DictionaryStatus dictionaryStatus) {
         // Key in the ref
         for (String key : referenceDictionary.getDictionary().keySet()) {
             if (!dictionary.getDictionary().containsKey(key)) {
-                dicoStatus.nbMissingKeys++;
-                dicoStatus.missingKeys.add(key);
+                dictionaryStatus.nbMissingKeys++;
+                dictionaryStatus.missingKeys.add(key);
             }
         }
     }
 
     /**
      * run the dictionary and compare if the value on the dictionary and the value in the reference are the same type
+     * @param dictionary the dictionary to check
      * @param referenceDictionary reference dictionary
-     * @param dicoStatus   complete the status
+     * @param dictionaryStatus   complete the status
      */
-    private void checkIncorrectsObject(AppDictionary dictionary, AppDictionary referenceDictionary, DicoStatus dicoStatus) {
+    private void checkIncorrectObject(AppDictionary dictionary, AppDictionary referenceDictionary, DictionaryStatus dictionaryStatus) {
         // Key in the ref
         for (String key : referenceDictionary.getDictionary().keySet()) {
             if ( dictionary.getDictionary().containsKey(key)) {
@@ -63,21 +66,32 @@ public abstract class Operation {
                 Object localValue = dictionary.getDictionary().get(key);
                 Object referenceValue = referenceDictionary.getDictionary().get(key);
                 if (localValue != null && referenceValue != null && !localValue.getClass().equals(referenceValue.getClass())) {
-                    dicoStatus.nbIncorrectKeyClass++;
-                    dicoStatus.incorrectClass.add(key + ":" + referenceValue.getClass() + " expected, " + localValue.getClass() + " found");
+                    dictionaryStatus.nbIncorrectKeyClass++;
+                    dictionaryStatus.incorrectClass.add(key + ":" + referenceValue.getClass() + " expected, " + localValue.getClass() + " found");
                 }
             }
         }
     }
-    private void checkTooMuchKeys(AppDictionary dictionary, AppDictionary referenceDictionary, DicoStatus dicoStatus) {
+
+    /**
+     * Too much keys
+     * @param dictionary dictionary to work on
+     * @param referenceDictionary reference dictionary
+     * @param dictionaryStatus status fullfill
+     */
+    private void checkTooMuchKeys(AppDictionary dictionary, AppDictionary referenceDictionary, DictionaryStatus dictionaryStatus) {
         for (String key : dictionary.getDictionary().keySet()) {
             if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE))
                 continue; // ignore it
+            if (key.endsWith(SynchroParams.PLEASE_VERIFY_THE_SENTENCE_REFERENCE))
+                continue; // ignore it
             if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE))
                 key = key.substring(0, key.length() - SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE.length());
+            if (key.endsWith(SynchroParams.PLEASE_VERIFY_THE_SENTENCE))
+                key = key.substring(0, key.length() - SynchroParams.PLEASE_VERIFY_THE_SENTENCE.length());
             if (!referenceDictionary.getDictionary().containsKey(key)) {
-                dicoStatus.nbTooMuchKeys++;
-                dicoStatus.tooMuchKeys.add(key);
+                dictionaryStatus.nbTooMuchKeys++;
+                dictionaryStatus.tooMuchKeys.add(key);
             }
         }
     }
@@ -85,12 +99,16 @@ public abstract class Operation {
     /**
      * Status of the comparison between a dictionary and the reference
      */
-    public class DicoStatus {
+    public class DictionaryStatus {
         /**
          * Key is missing in the dictionary. A key, present in the reference dictionary, does not exist in the local
          */
         public int nbMissingKeys = 0;
         public Set<String> missingKeys = new HashSet<>();
+
+        public Map<String, Integer> statisticPerProposer = new HashMap<>();
+        public Map<String, Integer> statisticPerKeyAdditions = new HashMap<>();
+
         /**
          * Key define in the dictionary, but not exist in the reference dictionary
          */
@@ -101,6 +119,15 @@ public abstract class Operation {
          */
         public int nbIncorrectKeyClass = 0;
         public Set<String> incorrectClass = new HashSet<>();
+
+        public void addProposition(String proposerName) {
+            int statistic = statisticPerProposer.getOrDefault(proposerName,0);
+            statisticPerProposer.put(proposerName, statistic+1);
+        }
+        public void addKey(String suffixKey) {
+            int statistic = statisticPerKeyAdditions.getOrDefault(suffixKey,0);
+            statisticPerKeyAdditions.put(suffixKey, statistic+1);
+        }
     }
 
     /**

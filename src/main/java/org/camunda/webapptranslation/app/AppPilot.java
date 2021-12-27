@@ -4,6 +4,7 @@ package org.camunda.webapptranslation.app;
 /* -------------------------------------------------------------------- */
 /*                                                                      */
 /* Manage an application (a directory)                                  */
+/* AppPilot exist for ONE folder and manage ALL languages in this folder */
 /*                                                                      */
 /* The class detects  all languages present (and missing), compare each  */
 /* dictionary with the referential  language. It can just play to detect */
@@ -14,6 +15,8 @@ package org.camunda.webapptranslation.app;
 import org.camunda.webapptranslation.SynchroParams;
 import org.camunda.webapptranslation.operation.DictionaryCompletion;
 import org.camunda.webapptranslation.operation.DictionaryDetection;
+import org.camunda.webapptranslation.operation.EncyclopediaUniversal;
+import org.camunda.webapptranslation.operation.Proposal;
 import org.camunda.webapptranslation.report.ReportInt;
 
 import java.io.File;
@@ -71,17 +74,39 @@ public class AppPilot {
     /**
      * Do the completion on each dictionary
      *
-     * @param synchroParams parameter object
-     * @param report report object
+     * @param encyclopediaUniversal, Encyclopedia universal to get propositions
+     * @param synchroParams          parameter object
+     * @param report                 report object
      */
-    public void completion(SynchroParams synchroParams, ReportInt report) {
+    public void completion(EncyclopediaUniversal encyclopediaUniversal, List<Proposal> listProposals, SynchroParams synchroParams, ReportInt report) {
         AppDictionary referenceDictionary = new AppDictionary(folder, referenceLanguage);
         referenceDictionary.read(report);
 
         DictionaryCompletion appCompletion = new DictionaryCompletion();
-        appCompletion.completion(expectedLanguages, folder, referenceDictionary, synchroParams, report);
-
+        appCompletion.completion(expectedLanguages, folder, referenceDictionary, encyclopediaUniversal, listProposals, synchroParams, report);
     }
 
+    /**
+     * Build and complete all encyclopedia
+     *
+     * @param encyclopediaUniversal the encyclopedia universal object
+     * @param synchroParams synchronisation parameters
+     * @param report report object
+     */
+    public void completeEncyclopedia(EncyclopediaUniversal encyclopediaUniversal, SynchroParams synchroParams, ReportInt report) {
+        AppDictionary referenceDictionary = new AppDictionary(folder, referenceLanguage);
+        if (referenceDictionary.existFile() && referenceDictionary.read(report))
+            encyclopediaUniversal.registerDictionary(referenceDictionary);
+
+        for (String language : expectedLanguages) {
+            if (synchroParams.getOnlyCompleteOneLanguage() != null
+                    && !synchroParams.getOnlyCompleteOneLanguage().equals(language))
+                continue;
+            AppDictionary dictionary = new AppDictionary(folder, language);
+            if (dictionary.existFile()&&  dictionary.read(report)) {
+                encyclopediaUniversal.registerDictionary(dictionary);
+            }
+        }
+    }
 
 }

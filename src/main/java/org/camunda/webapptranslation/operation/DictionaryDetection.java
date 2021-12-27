@@ -57,7 +57,7 @@ public class DictionaryDetection extends Operation {
                 // error already reported
                 continue;
             } else {
-                Operation.DicoStatus dictionaryStatus = checkKeys(dictionary, referenceDictionary);
+                DictionaryStatus dictionaryStatus = checkKeys(dictionary, referenceDictionary);
                 List<String> listReports = new ArrayList<>();
                 if (dictionaryStatus.nbMissingKeys > 0)
                     listReports.add("Missing " + dictionaryStatus.nbMissingKeys + " keys");

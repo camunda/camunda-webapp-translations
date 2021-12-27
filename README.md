@@ -36,3 +36,16 @@ Everybody is welcome to contribute! You can help by sending us a pull request wi
 
   * Website: http://www.camunda.org/
   * License: Apache License, Version 2.0  http://www.apache.org/licenses/LICENSE-2.0
+
+### Detect
+
+### Translate
+
+
+"AUTH_DAY_CONTEXT_EVENING_PLEASEVERIFYTHESENTENCE": "Bonne soirée",
+"AUTH_DAY_CONTEXT_EVENING_PLEASEVERIFYTHESENTENCE_REFERENCE": "evening",
+
+    "Delete_PLEASEVERIFYTHESENTENCE": "Detruire ; Détruire ; Destruction",
+    "Delete_PLEASEVERIFYTHESENTENCE_REFERENCE": "Delete",
+
+    "VARIABLE_NAME_PLEASETRANSLATETHESENTENCE": "Variable name",

@@ -8,6 +8,7 @@ package org.camunda.webapptranslation;
 /* -------------------------------------------------------------------- */
 
 import org.camunda.webapptranslation.app.AppPilot;
+import org.camunda.webapptranslation.operation.*;
 import org.camunda.webapptranslation.report.ReportInt;
 import org.camunda.webapptranslation.report.ReportLogger;
 import org.camunda.webapptranslation.report.ReportStdout;
@@ -43,7 +44,10 @@ public class SynchroTranslation {
         }
         // get all dictionary folder
         List<File> listFolders = getDictionaryFolder(synchroParams, report);
-
+        if (listFolders.isEmpty()) {
+            report.severe(SynchroTranslation.class, "No folder detected containing a file for the language ["+synchroParams.getReferenceLanguage()+"]");
+            return;
+        }
         // build all Application Pilot
         List<AppPilot> listAppPilot = new ArrayList<>();
         listFolders.forEach(folder -> listAppPilot.add(new AppPilot(folder, synchroParams.getReferenceLanguage())));
@@ -60,7 +64,19 @@ public class SynchroTranslation {
         }
         if (synchroParams.getCompletion() != SynchroParams.COMPLETION.NO) {
             report.info(SynchroTranslation.class, "=================================== Completion ===================================");
-            listAppPilot.forEach(pilot -> pilot.completion(synchroParams, report));
+            EncyclopediaUniversal encyclopediaUniversal = new EncyclopediaUniversal( synchroParams.getReferenceLanguage());
+
+            List<Proposal> listProposals = new ArrayList<>();
+            if (synchroParams.getCompletion() == SynchroParams.COMPLETION.TRANSLATION) {
+                listProposals.add(new ProposalSameKey());
+                listProposals.add(new ProposalSameTranslation());
+                listProposals.add(new ProposalGoogleTranslate( synchroParams.getGoogleAPIKey(), synchroParams.getLimitNumberGoogleTranslation()));
+            }
+
+
+
+            listAppPilot.forEach(pilot->pilot.completeEncyclopedia(encyclopediaUniversal, synchroParams, report));
+            listAppPilot.forEach(pilot -> pilot.completion(encyclopediaUniversal, listProposals, synchroParams, report));
         }
 
         System.out.println("The end");
