@@ -63,8 +63,7 @@ public class DictionaryCompletion extends Operation {
             // purge all TRANSLATE key
             appDictionary.getDictionary()
                     .entrySet()
-                    .removeIf(entry -> (entry.getKey().endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE)
-                            || entry.getKey().endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE)
+                    .removeIf(entry -> (entry.getKey().endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE)
                             || entry.getKey().endsWith(SynchroParams.PLEASE_VERIFY_THE_SENTENCE)
                             || entry.getKey().endsWith(SynchroParams.PLEASE_VERIFY_THE_SENTENCE_REFERENCE)
                     ));
@@ -77,8 +76,8 @@ public class DictionaryCompletion extends Operation {
 
             if (dictionaryStatus.nbMissingKeys > 0) {
 
-                dictionaryStatus.missingKeys.stream()
-                        .forEach(key -> manageAddKey(dictionaryStatus, key, appDictionary, referenceDictionary, listProposals));
+                dictionaryStatus.missingKeys
+                        .forEach(key -> manageAddKey(dictionaryStatus, key, appDictionary, referenceDictionary, listProposals, report));
 
                 listReports.add("Add " + dictionaryStatus.nbMissingKeys + " keys / proposition ( "
                         + dictionaryStatus.statisticPerProposer.entrySet()
@@ -95,15 +94,14 @@ public class DictionaryCompletion extends Operation {
 
             if (dictionaryStatus.nbTooMuchKeys > 0) {
                 listReports.add("Remove " + dictionaryStatus.nbMissingKeys + " keys");
-                dictionaryStatus.tooMuchKeys.stream()
-                        .forEach( key -> appDictionary.removeKey(key));
+                dictionaryStatus.tooMuchKeys.forEach(key -> appDictionary.removeKey(key));
             }
             if (dictionaryStatus.nbIncorrectKeyClass > 0) {
                 listReports.add("Replace " + dictionaryStatus.nbMissingKeys + " keys");
                 dictionaryStatus.incorrectClass
                         .forEach((key -> {
                             appDictionary.removeKey(key);
-                            manageAddKey(dictionaryStatus, key, appDictionary, referenceDictionary, listProposals);
+                            manageAddKey(dictionaryStatus, key, appDictionary, referenceDictionary, listProposals, report);
                         }));
             }
             if (listReports.isEmpty())
@@ -130,8 +128,9 @@ public class DictionaryCompletion extends Operation {
      * @param key                 key to add
      * @param appDictionary       dictionary to add the key
      * @param referenceDictionary referential dictionary, then the value can be accessed
+     * @param report              to report any issue
      */
-    private void manageAddKey(DictionaryStatus dictionaryStatus, String key, AppDictionary appDictionary, AppDictionary referenceDictionary, List<Proposal> listProposals) {
+    private void manageAddKey(DictionaryStatus dictionaryStatus, String key, AppDictionary appDictionary, AppDictionary referenceDictionary, List<Proposal> listProposals, ReportInt report) {
         Object valueReference = referenceDictionary.getDictionary().get(key);
 
         if (valueReference instanceof Long || valueReference instanceof Integer || valueReference instanceof Double) {
@@ -150,7 +149,7 @@ public class DictionaryCompletion extends Operation {
             String referenceTranslation = null;
 
             if (!listProposals.isEmpty()) {
-                proposition = getProposition(dictionaryStatus, key, listProposals);
+                proposition = getProposition(dictionaryStatus, key, listProposals, report);
                 if (proposition != null) {
                     referenceTranslation = (String) valueReference;
                     defaultProposition = null;
@@ -184,9 +183,9 @@ public class DictionaryCompletion extends Operation {
      * @param key              key to have a proposition
      * @return the proposition, null if no proposition can be done
      */
-    private String getProposition(DictionaryStatus dictionaryStatus, String key, List<Proposal> listProposals) {
+    private String getProposition(DictionaryStatus dictionaryStatus, String key, List<Proposal> listProposals, ReportInt report) {
         for (Proposal proposal : listProposals) {
-            String proposition = proposal.calculateProposition(key);
+            String proposition = proposal.calculateProposition(key, report);
             if (proposition != null) {
                 dictionaryStatus.addProposition(proposal.getName());
                 return proposition;

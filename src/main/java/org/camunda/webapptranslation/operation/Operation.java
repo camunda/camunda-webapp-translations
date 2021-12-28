@@ -40,7 +40,7 @@ public abstract class Operation {
      * run the reference dictionary. Verify that the key exist in the local dictionary.
      *
      * @param referenceDictionary reference dictionary
-     * @param dictionaryStatus          complete the status
+     * @param dictionaryStatus    complete the status
      */
     private void checkMissingKeys(AppDictionary dictionary, AppDictionary referenceDictionary, DictionaryStatus dictionaryStatus) {
         // Key in the ref
@@ -54,14 +54,15 @@ public abstract class Operation {
 
     /**
      * run the dictionary and compare if the value on the dictionary and the value in the reference are the same type
-     * @param dictionary the dictionary to check
+     *
+     * @param dictionary          the dictionary to check
      * @param referenceDictionary reference dictionary
-     * @param dictionaryStatus   complete the status
+     * @param dictionaryStatus    complete the status
      */
     private void checkIncorrectObject(AppDictionary dictionary, AppDictionary referenceDictionary, DictionaryStatus dictionaryStatus) {
         // Key in the ref
         for (String key : referenceDictionary.getDictionary().keySet()) {
-            if ( dictionary.getDictionary().containsKey(key)) {
+            if (dictionary.getDictionary().containsKey(key)) {
                 // check: the two keys must be identical (String <-> String or List<->List)
                 Object localValue = dictionary.getDictionary().get(key);
                 Object referenceValue = referenceDictionary.getDictionary().get(key);
@@ -75,14 +76,13 @@ public abstract class Operation {
 
     /**
      * Too much keys
-     * @param dictionary dictionary to work on
+     *
+     * @param dictionary          dictionary to work on
      * @param referenceDictionary reference dictionary
-     * @param dictionaryStatus status fullfill
+     * @param dictionaryStatus    status fulfill
      */
     private void checkTooMuchKeys(AppDictionary dictionary, AppDictionary referenceDictionary, DictionaryStatus dictionaryStatus) {
         for (String key : dictionary.getDictionary().keySet()) {
-            if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE_REFERENCE))
-                continue; // ignore it
             if (key.endsWith(SynchroParams.PLEASE_VERIFY_THE_SENTENCE_REFERENCE))
                 continue; // ignore it
             if (key.endsWith(SynchroParams.PLEASE_TRANSLATE_THE_SENTENCE))
@@ -94,6 +94,17 @@ public abstract class Operation {
                 dictionaryStatus.tooMuchKeys.add(key);
             }
         }
+    }
+
+    /**
+     * From the language, return a standard header string
+     *
+     * @param language language
+     * @return the standard header string
+     */
+    protected String headerLanguage(String language) {
+        String label = INDENTATION + "[" + language + "]          ";
+        return label.substring(0, INDENTATION.length() + 10) + " ... ";
     }
 
     /**
@@ -121,22 +132,13 @@ public abstract class Operation {
         public Set<String> incorrectClass = new HashSet<>();
 
         public void addProposition(String proposerName) {
-            int statistic = statisticPerProposer.getOrDefault(proposerName,0);
-            statisticPerProposer.put(proposerName, statistic+1);
+            int statistic = statisticPerProposer.getOrDefault(proposerName, 0);
+            statisticPerProposer.put(proposerName, statistic + 1);
         }
-        public void addKey(String suffixKey) {
-            int statistic = statisticPerKeyAdditions.getOrDefault(suffixKey,0);
-            statisticPerKeyAdditions.put(suffixKey, statistic+1);
-        }
-    }
 
-    /**
-     * From the language, return a standard header string
-     * @param language language
-     * @return the standard header string
-     */
-    protected String headerLanguage(String language) {
-        String label = INDENTATION + "[" + language + "]          ";
-        return label.substring(0, INDENTATION.length() + 10) + " ... ";
+        public void addKey(String suffixKey) {
+            int statistic = statisticPerKeyAdditions.getOrDefault(suffixKey, 0);
+            statisticPerKeyAdditions.put(suffixKey, statistic + 1);
+        }
     }
 }

@@ -6,6 +6,8 @@ package org.camunda.webapptranslation.app;
 /*                                                                      */
 /* -------------------------------------------------------------------- */
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.camunda.webapptranslation.report.ReportInt;
 
 import java.io.*;
@@ -13,17 +15,16 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class AppDictionarySerialize {
 
-    private AppDictionary appDictionary;
     private static final String UTF8_BOM = "\uFEFF";
+    private final AppDictionary appDictionary;
 
     protected AppDictionarySerialize(AppDictionary appDictionary) {
         this.appDictionary = appDictionary;
     }
+
     /**
      * @return true if the dictionary was read without error
      */
@@ -47,10 +48,10 @@ public class AppDictionarySerialize {
             if (jsonComplete.startsWith(UTF8_BOM))
                 jsonComplete = jsonComplete.substring(1);
             Gson gson = new Gson();
-            Map<String,Object> dictionaryJson = gson.fromJson(jsonComplete, Map.class);
+            Map<String, Object> dictionaryJson = gson.fromJson(jsonComplete, Map.class);
             // a empty dictionary return a null JSON
-            if (dictionaryJson!=null)
-                convertToFlatList( dictionaryJson, "");
+            if (dictionaryJson != null)
+                convertToFlatList(dictionaryJson, "");
             return true;
         } catch (Exception e) {
             report.severe(AppDictionary.class, String.format(" Error during reading dictionary [%s] file[%s]", appDictionary.getLanguage(), file.getAbsolutePath()), e);
@@ -73,8 +74,8 @@ public class AppDictionarySerialize {
                 String fileName = file.getName();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy_HHmmss");
 
-                fileName = fileName.replace(".json", "_"+LocalDateTime.now().format(formatter) + ".bak");
-                File destFile = new File(backupDirectory.getAbsolutePath() +  File.separator + fileName);
+                fileName = fileName.replace(".json", "_" + LocalDateTime.now().format(formatter) + ".bak");
+                File destFile = new File(backupDirectory.getAbsolutePath() + File.separator + fileName);
 
                 file.renameTo(destFile);
             }
@@ -87,10 +88,10 @@ public class AppDictionarySerialize {
 
         try (FileWriter writer = new FileWriter(file.getAbsolutePath())) {
             //We can write any JSONArray or JSONObject instance to the file
-            Map<String,Object> dicoJson = convertFromFlatList();
+            Map<String, Object> dicoJson = convertFromFlatList();
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            writer.write( gson.toJson(dicoJson) );
+            writer.write(gson.toJson(dicoJson));
 
             writer.flush();
 
@@ -111,10 +112,10 @@ public class AppDictionarySerialize {
     /**
      * Get all keys. The dictionary is a hierarchy, like "{labels { APPVENDOR = ""}}. Returns this value as "labels.APPVENDOR"
      */
-    private void convertToFlatList(Map<String,Object> jsonDico, String hierarchy) {
+    private void convertToFlatList(Map<String, Object> jsonDico, String hierarchy) {
         for (Map.Entry<String, Object> entry : jsonDico.entrySet()) {
             if (entry.getValue() instanceof Map) {
-                convertToFlatList((Map<String,Object>) entry.getValue(), hierarchy + entry.getKey() + ".");
+                convertToFlatList((Map<String, Object>) entry.getValue(), hierarchy + entry.getKey() + ".");
             } else if (entry.getValue() instanceof List) {
                 appDictionary.addKey(hierarchy + entry.getKey(), entry.getValue());
             } else if (entry.getValue() instanceof Long || entry.getValue() instanceof Integer) {
@@ -128,17 +129,18 @@ public class AppDictionarySerialize {
     /**
      * Convert the flat list stored in the dictionary, to a hierarchy, to save it in Json
      * a TreeMap is used to order alphabetically keys
+     *
      * @return a hierarchy of Map / Keys
      */
-    private Map<String,Object> convertFromFlatList() {
-        Map<String,Object> dicoObject = new TreeMap<>();
+    private Map<String, Object> convertFromFlatList() {
+        Map<String, Object> dicoObject = new TreeMap<>();
         for (Map.Entry<String, Object> entry : appDictionary.getDictionary().entrySet()) {
             StringTokenizer st = new StringTokenizer(entry.getKey(), ".");
             List<String> tokens = new ArrayList<>();
             while (st.hasMoreTokens()) {
                 tokens.add(st.nextToken()); // use already extracted value
             }
-            Map<String,Object> container = getContainer(tokens, dicoObject);
+            Map<String, Object> container = getContainer(tokens, dicoObject);
             container.put(tokens.get(tokens.size() - 1), entry.getValue());
         }
         return dicoObject;
@@ -151,13 +153,13 @@ public class AppDictionarySerialize {
      * @param dicoObject the root object to navigate in
      * @return the local container according the tokens list
      */
-    private Map<String,Object> getContainer(List<String> tokens, Map<String,Object> dicoObject) {
-        Map<String,Object> currentContainer = dicoObject;
+    private Map<String, Object> getContainer(List<String> tokens, Map<String, Object> dicoObject) {
+        Map<String, Object> currentContainer = dicoObject;
         for (int i = 0; i < tokens.size() - 1; i++) {
             if (currentContainer.containsKey(tokens.get(i)))
-                currentContainer = (Map<String,Object>) currentContainer.get(tokens.get(i));
+                currentContainer = (Map<String, Object>) currentContainer.get(tokens.get(i));
             else {
-                Map<String,Object> subContainer = new TreeMap<>();
+                Map<String, Object> subContainer = new TreeMap<>();
                 currentContainer.put(tokens.get(i), subContainer);
                 currentContainer = subContainer;
             }

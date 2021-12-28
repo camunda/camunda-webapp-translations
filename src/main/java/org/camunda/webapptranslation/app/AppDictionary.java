@@ -6,18 +6,20 @@ package org.camunda.webapptranslation.app;
 /*                                                                      */
 /* -------------------------------------------------------------------- */
 
-import java.io.*;
-import java.util.*;
-
-import org.camunda.webapptranslation.SynchroParams;
 import org.camunda.webapptranslation.report.ReportInt;
+
+import java.io.File;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class AppDictionary {
 
 
-    private File path;
-    private String language;
+    public final static String PREFIX_PLEASE_TRANSLATE = "";
+    private final File path;
+    private final String language;
     /**
      * Dictionary, JSON format is a hierarchy collection of String or list
      * Something like
@@ -41,8 +43,6 @@ public class AppDictionary {
      * marker to know if the dictionary is modified or not
      */
     private boolean dictionaryIsModified = false;
-
-    public final static String PREFIX_PLEASE_TRANSLATE = "";
 
     public AppDictionary(File path, String language) {
         this.path = path;
@@ -97,6 +97,7 @@ public class AppDictionary {
 
     /**
      * isModified
+     *
      * @return true if the dictionary change (keys added, removed)
      */
     public boolean isModified() {
@@ -157,11 +158,12 @@ public class AppDictionary {
      * @return the file, path + language
      */
     public File getFile() {
-        return new File(path +File.separator+ language + ".json");
+        return new File(path + File.separator + language + ".json");
     }
 
     /**
      * Return the language managed by this dictionary
+     *
      * @return the language
      */
     public String getLanguage() {

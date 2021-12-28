@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.camunda.webapptranslation</groupId>
-    <artifactId>SyncroTranslation</artifactId>
+    <artifactId>SynchroTranslation</artifactId>
     <version>1.0</version>
     <properties>
         <start-class>org.camunda.webapptransation.DetectAndComplete</start-class>
@@ -33,4 +33,38 @@
             <version>1.21.0</version>
         </dependency>
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>SynchroTranslation</finalName>
+                            <archive>
+                                <manifest>
+                                        <mainClass>org.camunda.webapptranslation.SynchroTranslation</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                    </execution>
+                </executions>
+
+
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>

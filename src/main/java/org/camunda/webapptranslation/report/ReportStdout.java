@@ -1,16 +1,14 @@
 package org.camunda.webapptranslation.report;
 
 
-import org.camunda.webapptranslation.report.ReportInt;
-
 public class ReportStdout implements ReportInt {
 
     public void severe(Class<?> header, String msg, Exception e) {
-        System.err.println("ERROR: "+msg+" "+e.toString());
+        System.err.println("ERROR: " + msg + " " + e.toString());
     }
 
     public void severe(Class<?> header, String msg) {
-        System.err.println("ERROR: "+msg);
+        System.err.println("ERROR: " + msg);
     }
 
 

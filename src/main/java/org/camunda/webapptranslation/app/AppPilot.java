@@ -20,7 +20,10 @@ import org.camunda.webapptranslation.operation.Proposal;
 import org.camunda.webapptranslation.report.ReportInt;
 
 import java.io.File;
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 public class AppPilot {
 
@@ -32,7 +35,7 @@ public class AppPilot {
     public AppPilot(File folder, String referenceLanguage) {
         this.folder = folder;
         this.referenceLanguage = referenceLanguage;
-        for (File file : new File(folder.getAbsolutePath()).listFiles()) {
+        for (File file : Objects.requireNonNull(new File(folder.getAbsolutePath()).listFiles())) {
             if (file.getName().endsWith(".json"))
                 languages.add(file.getName().substring(0, file.getName().length() - 5));
         }
@@ -90,8 +93,8 @@ public class AppPilot {
      * Build and complete all encyclopedia
      *
      * @param encyclopediaUniversal the encyclopedia universal object
-     * @param synchroParams synchronisation parameters
-     * @param report report object
+     * @param synchroParams         synchronisation parameters
+     * @param report                report object
      */
     public void completeEncyclopedia(EncyclopediaUniversal encyclopediaUniversal, SynchroParams synchroParams, ReportInt report) {
         AppDictionary referenceDictionary = new AppDictionary(folder, referenceLanguage);
@@ -103,7 +106,7 @@ public class AppPilot {
                     && !synchroParams.getOnlyCompleteOneLanguage().equals(language))
                 continue;
             AppDictionary dictionary = new AppDictionary(folder, language);
-            if (dictionary.existFile()&&  dictionary.read(report)) {
+            if (dictionary.existFile() && dictionary.read(report)) {
                 encyclopediaUniversal.registerDictionary(dictionary);
             }
         }

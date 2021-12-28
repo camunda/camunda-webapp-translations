@@ -1,17 +1,19 @@
 package org.camunda.webapptranslation.operation;
 
 import org.camunda.webapptranslation.app.AppDictionary;
+import org.camunda.webapptranslation.report.ReportInt;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProposalSameTranslation implements  Proposal{
+public class ProposalSameTranslation implements Proposal {
 
 
     private AppDictionary referenceDictionary;
     private AppDictionary appDictionary;
-    private  EncyclopediaUniversal encyclopediaUniversal;
+    private EncyclopediaUniversal encyclopediaUniversal;
 
+    private int numberOfPropositions = 0;
 
 
     /**
@@ -31,30 +33,41 @@ public class ProposalSameTranslation implements  Proposal{
         this.encyclopediaUniversal = encyclopediaUniversal;
     }
 
+    @Override
+    public boolean begin(ReportInt report) {
+        numberOfPropositions = 0;
+        return true;
+    }
+
+    @Override
+    public void end(ReportInt report) {
+        report.info(ProposalSameKey.class, "SameTranslation: " + numberOfPropositions + " propositions");
+
+    }
 
 
     /**
-     *  The content already exist. Example, to translate to French, using the English dictionary as reference:
-     *  We search:
-     *   ===>  cockpit[fr]: "BULK_OVERRIDE_SUCCESSFUL":
+     * The content already exist. Example, to translate to French, using the English dictionary as reference:
+     * We search:
+     * ===>  cockpit[fr]: "BULK_OVERRIDE_SUCCESSFUL":
      * In the reference dictionary, the value is
-     *   ===>  cockpit[en]:  "BULK_OVERRIDE_SUCCESSFUL": "Successful",
-     *
+     * ===>  cockpit[en]:  "BULK_OVERRIDE_SUCCESSFUL": "Successful",
+     * <p>
      * We search if the same CONTENT exists in the reference dictionary.
      * We found in the
-     *  ===>  tasklist[en] : "SUCCESSFUL": "Successful",
-     *   ===>  tasklist[en] : "REMOVED_OK": "Successful",
-     *   ===>  tasklist[en] : "CREATED_SUCCESS": "Successful",
+     * ===>  taskList[en] : "SUCCESSFUL": "Successful",
+     * ===>  taskList[en] : "REMOVED_OK": "Successful",
+     * ===>  taskList[en] : "CREATED_SUCCESS": "Successful",
      * and a translation exists for both with:
-     *  ===>  tasklist[fr] :  "SUCCESSFUL": "Avec succès",
-     *  ===>  tasklist[fr] :  "REMOVED_OK": "opération réussie",
-     *  But no translation for "CREATED_SUCCESS in fr.
+     * ===>  taskList[fr] :  "SUCCESSFUL": "Avec succès",
+     * ===>  taskList[fr] :  "REMOVED_OK": "opération réussie",
+     * But no translation for "CREATED_SUCCESS in fr.
      * So, we have two propositions, and we do not choose
      * We propose the 2 translations
-     *  cockpit[fr]: "BULK_OVERRIDE_SUCCESSFUL": = "Avec succès ; opération réussie"
+     * cockpit[fr]: "BULK_OVERRIDE_SUCCESSFUL": = "Avec succès ; opération réussie"
      */
     @Override
-    public String calculateProposition(String key) {
+    public String calculateProposition(String key, ReportInt report) {
         // get the sentence in the reference dictionary
         Object referenceTranslation = referenceDictionary.getDictionary().get(key);
         if (!(referenceTranslation instanceof String))
@@ -70,7 +83,9 @@ public class ProposalSameTranslation implements  Proposal{
                         .flatMap(List::stream)
                         .distinct()
                         .collect(Collectors.toList());
+        if (!listPropositions.isEmpty())
+            numberOfPropositions++;
 
-        return listPropositions.isEmpty() ? null : String.join(" ; ", listPropositions);
+        return listPropositions.isEmpty() ? null : String.join(DELIMITER_BETWEEN_PROPOSITION, listPropositions);
     }
 }
