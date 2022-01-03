@@ -41,7 +41,7 @@
     "FILTER_DELETE": "Supprimer le filtre",
     "FILTER_DELETION_WARNING": "La suppression du filtre est irrémédiable, êtes-vous sûr de vouloir continuer ?",
     "FILTER_DELETION_SUCCESS": "Le filtre à été supprimé.",
-    "FILTER_DELETION_ERROR": "Quelque chose a disfonctionné lors de la supression du filtre",
+    "FILTER_DELETION_ERROR": "Quelque chose a disfonctionné lors de la suppression du filtre",
     "FILTER_SAVE_SUCCESS": "Le filtre à été enregistré",
     "FILTER_SAVE_ERROR": "Quelque chose a disfonctionné lors de l'enregistrement du filtre",
     "FILTER_NOT_FOUND": "Filtre non trouvé",
