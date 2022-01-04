@@ -37,7 +37,7 @@
     "DOUBLE": "Double",
     "DATE": "Date",
     "STRING": "Chaîne",
-    "AUTH_LOGOUT_SUCCESSFUL": "Déconnexion avec succès",
+    "AUTH_LOGOUT_SUCCESSFUL": "Déconnexion réussie",
     "AUTH_LOGOUT_THANKS": "Merci d'avoir utiliser Camunda aujourd'hui. {{dayContext}} !",
     "AUTH_DAY_CONTEXT_MORNING": "Bonne journée",
     "AUTH_DAY_CONTEXT_DAY": "Bonne journée",
