@@ -368,7 +368,7 @@
     "TIME_TO_LIVE_POPUP_TITLE": "Wert des Lebenszyklus historischer Daten ändern",
     "TIME_TO_LIVE_POPUP_SUBTITLE": "Option wählen:",
     "TIME_TO_LIVE_POPUP_RADIO_UPDATE": "Wert aktualisieren",
-    "TIME_TO_LIVE_POPUP_RADIO_UPDATE_TOOLTIP": "Aktualisiert den Wert mit dem jeweilig gewählen",
+    "TIME_TO_LIVE_POPUP_RADIO_UPDATE_TOOLTIP": "Aktualisiert den Wert mit dem jeweilig gewählten",
     "TIME_TO_LIVE_POPUP_RADIO_CLEAR": "Wert zurücksetzen",
     "TIME_TO_LIVE_POPUP_RADIO_CLEAR_TOOLTIP": "Setzt den Wert auf \"null\"",
     "TIME_TO_LIVE_POPUP_STATE_STATUS": "Abgeschlossen",
