@@ -188,6 +188,7 @@
     "TELEMETRY_SUCCESS": "Telemetry Configuration was saved successfully",
     "TELEMETRY_ERROR_STATUS": "Error",
     "TELEMETRY_ERROR_MESSAGE": "Your configuration could not be saved. Please try again.",
+    "TELEMETRY_FETCH_CONFIGURATION_ERROR_MESSAGE": "Telemetry configuration fetching failed: {{msg}}",
     "DIAGNOSTICS_FETCH_DATA_ERROR_MESSAGE": "Telemetry data fetching failed: {{msg}}",
     "DIAGNOSTICS": "Diagnostics",
     "DIAGNOSTICS_INTRODUCTION": "The diagnostics data allows to understand the environment to aid problem diagnosis.",
