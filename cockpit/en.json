@@ -263,6 +263,7 @@
     "BATCHES_PROGRESS_IN": "In Progress Batches",
     "BATCHES_PROGRESS_ID": "ID",
     "BATCHES_PROGRESS_TYPE": "Type",
+    "BATCHES_PROGRESS_USER": "User",
     "BATCHES_PROGRESS_FAIL_JOBS": "Failed Jobs",
     "BATCHES_PROGRESS_PROGRESS": "Progress",
     "BATCHES_PROGRESS_NO_RUNNING": "No running batches",
