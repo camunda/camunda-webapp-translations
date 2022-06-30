@@ -29,6 +29,7 @@ A [Video Tutorial](https://blog.camunda.org/post/2014/12/internationalization-in
 | Turkish              | 7.12.0  | [Tasklist](/tasklist/tr.json)                                                                                     | Mustafa Cem Ertem, [Elif T. Kuş](https://github.com/elifkus)                                                                         |
 | Nepali               | 7.14.0  | [Tasklist](/tasklist/np.json)                                                                                     | [Ashish Maharjan](https://github.com/AshishMhrzn10)                                                                                  |
 | Chinese Simplified   | 7.15.0  | [Tasklist](/tasklist/zh-CN.json), [Cockpit](/cockpit/zh-CN.json), [Admin](/admin/zh-CN.json), [Welcome](/welcome/zh-CN.json)  |[David Che](https://github.com/DavidSche)                                |
+| Lithuanian   | 7.17.0  | [Tasklist](/tasklist/lt.json)  | [Aleksandr Fokin](https://github.com/aleksf0)                                |
 
 ### Contribute!
 
