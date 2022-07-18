@@ -46,7 +46,7 @@
     "AUTH_FAILED_TO_DISPLAY_RESOURCE": "Falha ao exibir recursos",
     "AUTH_AUTHENTICATION_FAILED": "Falha na autenticação. Sua sessão pode ter expirado, você precisa fazer o login novamente.",
     "PAGE_LOGIN_ERROR_MSG": "Credenciais erradas ou falta de direitos de acesso à aplicação",
-    "PAGE_LOGIN_USERNAME": "Usúario",
+    "PAGE_LOGIN_USERNAME": "Usuário",
     "PAGE_LOGIN_PASSWORD": "Senha",
     "PAGE_LOGIN_PLEASE_SIGN_IN": "Informe seu usuário e senha",
     "PAGE_LOGIN_SIGN_IN_ACTION": "Entrar",
