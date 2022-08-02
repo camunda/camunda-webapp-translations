@@ -1054,6 +1054,7 @@
     "PLGN_BATCH_SECOND_STEP": "2. Confirm",
     "PLGN_BATCH_THIRD_STEP": "3. Results",
     "PLGN_BATCH_SELECT_OPERATION": "Select operation",
+    "PLGN_BATCH_CHOOSE_SELECTION_TYPE": "Choose selection type",
     "PLGN_BATCH_OPERATION": "Operation:",
     "PLGN_BATCH_OPERATION_OPTION": "<Operation>",
     "PLGN_BATCH_BUSINESS_KEY": "Business Key",
