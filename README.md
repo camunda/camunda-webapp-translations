@@ -41,7 +41,7 @@ Everybody is welcome to contribute! You can help by sending us a pull request wi
   * Website: http://www.camunda.org/
   * License: Apache License, Version 2.0  http://www.apache.org/licenses/LICENSE-2.0
 
-[en-tasklist]: https://github.com/camunda/camunda-bpm-platform/tree/master/webapps/ui/tasklist/clinet/en.json
+[en-tasklist]: https://github.com/camunda/camunda-bpm-platform/tree/master/webapps/ui/tasklist/client/en.json
 [en-cockpit]: https://github.com/camunda/camunda-bpm-platform/tree/master/webapps/ui/cockpit/client/en.json
 [en-admin]: https://github.com/camunda/camunda-bpm-platform/tree/master/webapps/ui/admin/client/en.json
 [en-welcome]: https://github.com/camunda/camunda-bpm-platform/tree/master/webapps/ui/welcome/client/en.json
