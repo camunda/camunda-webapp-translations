@@ -262,6 +262,7 @@
     "BATCHES_PROGRESS_IN": "Stapel in Bearbeitung",
     "BATCHES_PROGRESS_ID": "ID",
     "BATCHES_PROGRESS_TYPE": "Typ",
+    "BATCHES_PROGRESS_USER": "Benutzer",
     "BATCHES_PROGRESS_FAIL_JOBS": "Fehlgeschlagene Stapel-Jobs",
     "BATCHES_PROGRESS_PROGRESS": "Fortschritt",
     "BATCHES_PROGRESS_NO_RUNNING": "Keine Stapel in Bearbeitung",
