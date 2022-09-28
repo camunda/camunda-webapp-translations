@@ -61,6 +61,7 @@
     "AUTHORIZATION_RESOURCE_ID": "Identifiant de ressource",
     "AUTHORIZATION_SYSTEM": "Système",
     "AUTHORIZATION_TASK": "Tâche",
+
     "AUTHORIZATION_TENANT": "Tenant",
     "AUTHORIZATION_TENANT_MEMBERSHIP": "Membre du Tenant",
     "AUTHORIZATION_TYPE": "Type",
