@@ -397,7 +397,7 @@
     "FILTER_FORM_PERMISSIONS_REMOVE": "Enlever",
     "FILTER_FORM_PERMISSIONS_SAVE_ERROR": "Une erreur s'est produite lors de l'enregistrement des autorisations",
     "FILTER_FORM_PERMISSIONS_SAVE_ERROR_PLEASEVERIFYTHESENTENCE_REFERENCE": "Something went wrong while saving the permissions",
-    "FILTER_FORM_PERMISSIONS_USER_ID": "Identifiant d'utilisateur",
+    "FILTER_FORM_PERMISSIONS_USER_ID": "Identifiant utilisateur",
     "FILTER_FORM_PERMISSION_GROUP_USER": "Groupe / Utilisateur",
     "FILTER_FORM_PERMISSION_GROUP_USER_PLEASEVERIFYTHESENTENCE_REFERENCE": "Group / User",
     "FILTER_FORM_PERMISSION_IDENTIFIER": "Identifiant",
