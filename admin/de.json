@@ -188,6 +188,7 @@
     "TELEMETRY_SUCCESS": "Die Telemetrie-Einstellungen wurden erfolgreich gespeichert",
     "TELEMETRY_ERROR_STATUS": "Fehler",
     "TELEMETRY_ERROR_MESSAGE": "Konfiguration konnte nicht gespeichert werden. Bitte versuche es erneut.",
+    "TELEMETRY_FETCH_CONFIGURATION_ERROR_MESSAGE": "Abfrage der Telemetrie-Konfiguration ist fehlgeschlagen: {{msg}}",
     "DIAGNOSTICS_FETCH_DATA_ERROR_MESSAGE": "Telemetrie Datenabfrage ist fehlgeschlagen: {{msg}}",
     "DIAGNOSTICS": "Diagnose",
     "DIAGNOSTICS_INTRODUCTION": "Die Diagnosedaten helfen dabei, die Systemumgebung besser zu verstehen. Dies unterstützt die Problemdiagnose.",
