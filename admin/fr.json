@@ -129,7 +129,7 @@
     "CAM_WIDGET_VARIABLE_NULL": "\u003cnull\u003e",
     "CAM_WIDGET_VARIABLE_RESET": "Réinitialise à la précédente valeur ou à sa valeur par défaut",
     "CAM_WIDGET_VARIABLE_SET_VALUE_NULL": "Positionne la valeur à \"null\"",
-    "CAM_WIDGET_VARIABLE_UNDEFINED": "\u003cindéfini\u003e",
+    "CAM_WIDGET_VARIABLE_UNDEFINED": "<null>",
     "CAM_WIDGET_VARIABLE_VALUE": "Valeur de la variable",
     "CANCEL": "Annuler",
     "CHANGE": "Changer",
