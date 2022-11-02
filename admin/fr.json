@@ -111,7 +111,7 @@
     "CAM_WIDGET_VARIABLES_TABLE_DIALOGUE": "Etes vous certain de vouloir détuire '{{name}}'",
     "CAM_WIDGET_VARIABLES_TABLE_EDIT_VARIABLE": "Edition de la variable",
     "CAM_WIDGET_VARIABLES_TABLE_NAME": "Nom",
-    "CAM_WIDGET_VARIABLES_TABLE_NULL": "\u003cnull\u003e",
+    "CAM_WIDGET_VARIABLES_TABLE_NULL": "<null>",
     "CAM_WIDGET_VARIABLES_TABLE_PLACEHOLDER_VALUE": "Valeur de la variable",
     "CAM_WIDGET_VARIABLES_TABLE_REVERT_VARIABLE": "Rétablir la variable",
     "CAM_WIDGET_VARIABLES_TABLE_SAVE_VARIABLE": "Sauvegarder la variable",
