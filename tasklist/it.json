@@ -59,8 +59,8 @@
       "yy": "%d anni"
     },
     "week": {
-      "dow": 1.0,
-      "doy": 4.0
+      "dow": 1,
+      "doy": 4
     },
     "weekdays": [
       "Domenica",
