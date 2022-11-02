@@ -168,7 +168,7 @@
     "FILTER": "Filtre",
     "FILTERS": "Filtres",
     "FIRST_LOGIN_HEADING": "Bienvenu chez Camunda",
-    "FIRST_LOGIN_INFO": "Il semble que c'est la première fois que vous utilisez l'applicaton. Consultez \u003ca href\u003d\"/camunda-welcome\"\u003eCamunda Welcome Page\u003c/a\u003e pour un résumé.",
+    "FIRST_LOGIN_INFO": "Il semble que c'est la première fois que vous utilisez l'applicaton. Consultez <a href=\"/camunda-welcome\">Camunda Welcome Page</a> pour un résumé.",
     "GENERIC_CONFIRMATION_CANCEL": "Annulation",
     "GENERIC_CONFIRMATION_PROCEED": "Procédé",
     "GENERIC_CONFIRMATION_TITLE": "Merci de confirmer",
