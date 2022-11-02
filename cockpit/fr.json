@@ -459,7 +459,7 @@
     "PLGN_AUDIT_TIME": "Changer le temps",
     "PLGN_AUDIT_USER": "Utilisateur",
     "PLGN_AUDIT_VIEW_MODAL_HEADER": "Afficher les annotations",
-    "PLGN_BATCH_ABOUT_TO": "Vous êtes sur le point de",
+    "PLGN_BATCH_ABOUT_TO": "Vous êtes sur le point d'effectuer l'opération: ",
     "PLGN_BATCH_ALL_INSTANCES_IN_FILTER": "toutes les instances dans le filtre",
     "PLGN_BATCH_BACK": "Retour",
     "PLGN_BATCH_BUSINESS_KEY": "Clé métier",
