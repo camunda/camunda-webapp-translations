@@ -3,7 +3,7 @@
 This repository was moved to Camunda's Community Hub starting with **Camunda Automation Platform 7.19.0-alpha3**.\
 Please find the new location here: https://github.com/camunda-community-hub/camunda-7-webapp-translations
 
-Please submit any future contributions to the [`camunda-community-hub/camunda-7-webapp-translations`](https://github.com/camunda-community-hub/camunda-7-webapp-translations**) repository.
+Please submit any future contributions to the [`camunda-community-hub/camunda-7-webapp-translations`](https://github.com/camunda-community-hub/camunda-7-webapp-translations) repository.
 
 ## License
 
